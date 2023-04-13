@@ -1,0 +1,53 @@
+.wrapperPageStagers {
+	position: relative;
+
+	&::after {
+		content: '';
+
+		position: absolute;
+		right: -30%;
+		top: 10%;
+
+		width: clamp(297px, calc(297px + 724 * ((100vw - 320px) / 1600)), 1021px);
+		height: clamp(352px, calc(352px + 857 * ((100vw - 320px) / 1600)), 1209px);
+
+		background: linear-gradient(
+			126.91deg,
+			rgba(54, 105, 249, 0.2) 27.11%,
+			rgba(32, 118, 198, 0.2) 99.07%
+		);
+
+		filter: blur(90.5px);
+
+		transform: rotate(30deg);
+	}
+
+	&::before {
+		content: '';
+
+		position: absolute;
+		left: -10%;
+		bottom: 7%;
+
+		width: clamp(223px, calc(223px + 427 * ((100vw - 320px) / 1600)), 650px);
+		height: clamp(264px, calc(264px + 506 * ((100vw - 320px) / 1600)), 770px);
+
+		background: linear-gradient(
+			8.4deg,
+			rgba(54, 105, 249, 0.2) 21.98%,
+			rgba(32, 118, 198, 0.2) 88.39%
+		);
+
+		filter: blur(90.5px);
+
+		transform: rotate(-150deg);
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.wrapperPageStagers {
+		&::after {
+			top: 3%;
+		}
+	}
+}

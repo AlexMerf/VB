@@ -1,0 +1,87 @@
+@import '@/styles/mixin.scss';
+
+.heroimage {
+	position: relative;
+
+	&::after {
+		content: '';
+
+		position: absolute;
+		left: clamp(-200px, calc(-200px + 150 * ((100vw - 320px) / 1600)), -50px);
+		bottom: clamp(
+			-500px,
+			calc(-500px + 400 * ((100vw - 320px) / 1600)),
+			-100px
+		);
+		z-index: -1;
+
+		width: 324px;
+		height: 710px;
+
+		background: linear-gradient(
+			8.4deg,
+			rgba(54, 105, 249, 0.2) 21.98%,
+			rgba(32, 118, 198, 0.2) 88.39%
+		);
+		filter: blur(90.5px);
+		transform: rotate(-30deg);
+	}
+
+	&::before {
+		content: '';
+
+		position: absolute;
+		right: clamp(-333px, calc(-333px + 0 * ((100vw - 320px) / 1600)), -333px);
+		top: clamp(-500px, calc(-500px + 0 * ((100vw - 320px) / 1600)), -500px);
+		z-index: -1;
+
+		width: clamp(185px, calc(185px + 500 * ((100vw - 320px) / 1600)), 685px);
+		height: clamp(251px, calc(251px + 700 * ((100vw - 320px) / 1600)), 951px);
+
+		background: linear-gradient(
+			126.91deg,
+			rgba(54, 105, 249, 0.2) 27.11%,
+			rgba(32, 118, 198, 0.2) 99.07%
+		);
+		filter: blur(90.5px);
+		transform: rotate(165deg);
+	}
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	@include adaptiv-value('gap', 80, 30, 1);
+}
+
+.title {
+	font-family: 'Unbounded';
+	font-size: clamp(25px, calc(25px + 45 * ((100vw - 320px) / 1600)), 70px);
+	line-height: 139.69%;
+	color: var(--color-textDark);
+
+	span {
+		position: relative;
+
+		display: inline-block;
+
+		@include adaptiv-value('padding-right', 20, 5, 1);
+		@include adaptiv-value('padding-left', 20, 5, 1);
+	}
+}
+
+.ovalIcon {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 768px) {
+	.heroimage {
+		&::before {
+			right: clamp(0px, calc(-333px + 333 * ((100vw - 320px) / 1600)), 0px);
+			top: clamp(0px, calc(-500px + 500 * ((100vw - 320px) / 1600)), 0px);
+		}
+	}
+}

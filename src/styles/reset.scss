@@ -1,0 +1,295 @@
+:root {
+	--index: calc(1vw + 1vh);
+}
+
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+		monospace;
+}
+
+body {
+	direction: ltr;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	padding: 0;
+	text-rendering: optimizeLegibility;
+	-webkit-text-decoration-skip: objects;
+	text-decoration-skip: objects;
+	-webkit-text-size-adjust: 100%;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	-webkit-tap-highlight-color: transparent;
+	overflow-x: hidden;
+
+	&.rtl {
+		direction: rtl;
+	}
+}
+
+p,
+dd,
+dl,
+figure,
+blockquote {
+	margin: 0;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+ul,
+ol {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+th {
+	font-weight: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	font-size: inherit;
+	font-weight: inherit;
+}
+
+audio,
+video {
+	display: block;
+}
+
+iframe {
+	border: none;
+}
+
+pre,
+code,
+kbd,
+samp {
+	font: inherit monospace, monospace;
+}
+
+a {
+	background: transparent;
+	text-decoration: none;
+	color: inherit;
+}
+
+abbr {
+	border: none;
+	text-decoration: none;
+}
+
+b,
+strong {
+	font-weight: 600;
+}
+
+i,
+em {
+	font-style: inherit;
+}
+
+dfn {
+	font-style: inherit;
+}
+
+mark {
+	background: transparent;
+	color: inherit;
+}
+
+small {
+	font-size: inherit;
+}
+
+sub,
+sup {
+	position: relative;
+	vertical-align: baseline;
+	font-size: inherit;
+	line-height: 0;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+sup {
+	top: -0.5em;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+	background: transparent;
+	padding: 0;
+	margin: 0;
+	border: none;
+	border-radius: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	color: inherit;
+	letter-spacing: inherit;
+	font-family: inherit;
+	font-style: inherit;
+	font-weight: inherit;
+}
+
+button,
+input {
+	overflow: visible;
+}
+
+button,
+select {
+	text-align: inherit;
+	text-transform: none;
+}
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+	cursor: pointer;
+}
+
+button:disabled {
+	pointer-events: none;
+	opacity: 0.3;
+}
+
+textarea {
+	resize: none;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+button::-moz-focus-inner,
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
+	border: none;
+	padding: 0;
+}
+
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
+	height: auto;
+}
+
+[type='search']::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+	-webkit-appearance: button;
+	font: inherit;
+}
+
+fieldset {
+	padding: 0;
+	margin: 0;
+	border: none;
+}
+
+legend {
+	display: block;
+	padding: 0;
+	white-space: normal;
+}
+
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	cursor: pointer;
+}
+
+select::-ms-expand {
+	display: none;
+}
+
+svg {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+input::-webkit-input-placeholder {
+	font-family: inherit;
+	font-style: inherit;
+	font-weight: inherit;
+}
+
+input::-moz-placeholder {
+	font-family: inherit;
+	font-style: inherit;
+	font-weight: inherit;
+}
+
+input:-ms-input-placeholder {
+	font-family: inherit;
+	font-style: inherit;
+	font-weight: inherit;
+}
+
+input::-ms-input-placeholder {
+	font-family: inherit;
+	font-style: inherit;
+	font-weight: inherit;
+}
+
+input::placeholder {
+	font-family: inherit;
+	font-style: inherit;
+	font-weight: inherit;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+	-webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+:is(a, button, input, textarea, summary) {
+	--outline-size: max(2px, 0.08em);
+	--outline-style: solid;
+	--outline-color: currentColor;
+}
+
+:is(a, button, input, textarea, summary):focus-visible {
+	outline: var(--outline-size) var(--outline-style) var(--outline-color);
+	outline-offset: var(--outline-offset, var(--outline-size));
+}

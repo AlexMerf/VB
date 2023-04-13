@@ -1,0 +1,109 @@
+.stages {
+	display: flex;
+	flex-direction: column;
+	gap: clamp(20px, calc(20px + 40 * ((100vw - 320px) / 1600)), 60px);
+}
+
+.stage {
+	position: relative;
+
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+
+	background: var(--color-blue);
+
+	border-radius: 27px;
+
+	padding: clamp(10px, calc(10px + 5 * ((100vw - 320px) / 1600)), 15px);
+
+	&:hover {
+		.stageContent {
+			width: 85%;
+		}
+	}
+}
+
+.number {
+	position: absolute;
+	left: clamp(0px, calc(0px + 38 * ((100vw - 320px) / 1600)), 38px);
+	top: 50%;
+
+	transform: translateY(-50%);
+
+	font-family: var(--font-unbounded);
+	font-weight: 400;
+	font-size: clamp(70px, calc(70px + 30 * ((100vw - 320px) / 1600)), 100px);
+	line-height: 139.69%;
+	color: var(--color-textLight);
+}
+
+.stageContent {
+	position: relative;
+	z-index: 2;
+
+	width: 100%;
+
+	background: var(--color-bgLight);
+
+	border-radius: clamp(15px, calc(15px + 12 * ((100vw - 320px) / 1600)), 27px);
+
+	padding: clamp(20px, calc(20px + 21 * ((100vw - 320px) / 1600)), 41px)
+		clamp(20px, calc(15px + 55 * ((100vw - 320px) / 1600)), 70px);
+
+	transition: width 0.4s ease-in-out;
+
+	will-change: width;
+
+	dl {
+		max-width: 904px;
+
+		display: flex;
+		flex-direction: column;
+		gap: clamp(15px, calc(15px + 10 * ((100vw - 320px) / 1600)), 25px);
+
+		& > div {
+			display: flex;
+			flex-direction: column;
+			gap: 5px;
+		}
+
+		dt {
+			font-family: var(--font-unbounded);
+			font-weight: 400;
+			font-size: clamp(14px, calc(14px + 6 * ((100vw - 320px) / 1600)), 20px);
+			line-height: 164.52%;
+			color: var(--color-textDark);
+		}
+
+		dd {
+			font-weight: 500;
+			font-size: clamp(12px, calc(12px + 4 * ((100vw - 320px) / 1600)), 16px);
+			line-height: 159.02%;
+			color: var(--color-textDark);
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.stage {
+		flex-direction: column;
+		min-height: 408px;
+
+		&:hover {
+			.stageContent {
+				width: 100%;
+			}
+		}
+	}
+
+	.number {
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.stageContent {
+		min-height: 302px;
+	}
+}

@@ -1,0 +1,112 @@
+.about {
+	background-color: var(--color-bgLight);
+
+	border-radius: clamp(25px, calc(25px + 55 * ((100vw - 320px) / 1600)), 80px);
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	gap: clamp(30px, calc(30px + 30 * ((100vw - 320px) / 1600)), 60px);
+
+	padding: clamp(30px, calc(30px + 50 * ((100vw - 320px) / 1600)), 80px) 0;
+}
+
+.topBlock {
+	display: grid;
+	grid-template-columns: 1.15fr 0.85fr;
+	gap: 30px;
+}
+
+.subTitle {
+	position: relative;
+
+	display: block;
+
+	font-weight: 500;
+	font-size: clamp(10px, calc(10px + 6 * ((100vw - 320px) / 1600)), 16px);
+	line-height: 159.02%;
+	color: var(--color-textDark);
+
+	padding-left: 10px;
+
+	&::before {
+		content: '';
+
+		position: absolute;
+		top: 50%;
+		left: 0;
+
+		transform: translateY(-40%);
+
+		width: 5px;
+		height: 5px;
+
+		border-radius: 100%;
+		background-color: currentColor;
+	}
+}
+
+.aboutText {
+	font-family: var(--font-unbounded);
+	font-size: clamp(20px, calc(20px + 20 * ((100vw - 320px) / 1600)), 40px);
+	line-height: 147.19%;
+	color: var(--color-textDark);
+}
+
+.aboutTextColor {
+	color: var(--color-blue);
+}
+
+.image {
+	justify-self: center;
+
+	width: clamp(280px, calc(280px + 72 * ((100vw - 320px) / 1600)), 352px);
+	height: clamp(280px, calc(280px + 72 * ((100vw - 320px) / 1600)), 352px);
+}
+
+.ovalIcon {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+
+	transform: translate(-50%, -50%);
+}
+
+.lowerBlock {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+	gap: clamp(10px, calc(10px + 20 * ((100vw - 320px) / 1600)), 30px);
+}
+
+.box {
+	background-color: var(--color-blue);
+	border-radius: clamp(25px, calc(25px + 15 * ((100vw - 320px) / 1600)), 40px);
+
+	padding: 35px 5px 35px 30px;
+}
+
+.boxTitle {
+	font-family: var(--font-unbounded);
+	font-weight: 400;
+	font-size: clamp(16px, calc(16px + 4 * ((100vw - 320px) / 1600)), 20px);
+	line-height: 164.52%;
+	color: var(--color-textLight);
+}
+
+.boxinfo {
+	font-weight: 500;
+	font-size: clamp(12px, calc(12px + 4 * ((100vw - 320px) / 1600)), 16px);
+	line-height: 159.02%;
+	color: var(--color-textLight);
+}
+
+@media screen and (max-width: 991px) {
+	.topBlock {
+		grid-template-columns: 1fr;
+	}
+
+	.box {
+		padding: 35px 80px 35px 30px;
+	}
+}

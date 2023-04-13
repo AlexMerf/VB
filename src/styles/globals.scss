@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@500&family=Unbounded&display=swap');
+@import '@/styles/mixin.scss';
+
+:root {
+	--color-blue: #3669f9;
+	--color-lightBlue: #e8eeff;
+	--color-textDark: #333644;
+	--color-textLight: #fdfdfd;
+	--color-bgDark: #333644;
+	--color-bgLight: #fdfdfd;
+	--font-mulish: 'Mulish', sans-serif;
+	--font-unbounded: 'Unbounded', cursive;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	html {
+		color-scheme: dark;
+	}
+}
+
+* {
+	box-sizing: border-box;
+
+	padding: 0;
+	margin: 0;
+}
+
+html,
+body {
+	max-width: 100vw;
+
+	scroll-behavior: smooth;
+}
+
+body {
+	height: 100%;
+	overflow-x: hidden;
+
+	font-family: var(--font-mulish);
+	font-style: normal;
+	font-weight: 400;
+	color: var(--color-textDark);
+
+	background-image: linear-gradient(
+			90deg,
+			rgba(253, 253, 253, 1) 100%,
+			rgba(253, 253, 253, 1) 100%
+		),
+		url('/image/bg.png');
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+h1 {
+	font-weight: 400;
+}
+
+h2 {
+	font-family: var(--font-unbounded);
+	font-weight: 400;
+	font-size: clamp(20px, calc(20px + 20 * ((100vw - 320px) / 1600)), 40px);
+	line-height: 147.19%;
+}
+
+button {
+	border: none;
+	outline: none;
+	background: none;
+	cursor: pointer;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+	background: var(--color-bgLight);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--color-blue);
+	border-radius: 5px;
+}
+
+.container {
+	width: 100%;
+	max-width: 1418px;
+
+	margin: 0 auto;
+	padding: 0 8px;
+}
+
+.wrapperimageAnimation {
+	will-change: transform;
+}
+
+.imageAnimation {
+	width: 100%;
+	height: auto;
+
+	transform: translateY(calc(((var(--value) * var(--variant)) - 942px) * 0.4));
+}
+

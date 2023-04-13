@@ -1,0 +1,49 @@
+.portfolio {
+	scroll-margin-top: 20px;
+}
+
+.projects {
+	position: relative;
+
+	display: flex;
+	flex-direction: column;
+	gap: clamp(69px, calc(69px + 36 * ((100vw - 320px) / 1600)), 105px);
+
+	margin-top: clamp(30px, calc(30px + 30 * ((100vw - 320px) / 1600)), 60px);
+
+	&::after {
+		content: '';
+		position: absolute;
+		right: -70%;
+		top: 10%;
+		z-index: -1;
+
+		width: clamp(297px, calc(297px + 724 * ((100vw - 320px) / 1600)), 1021px);
+		height: clamp(352px, calc(352px + 677 * ((100vw - 320px) / 1600)), 1029px);
+
+		background: linear-gradient(
+			126.91deg,
+			rgba(54, 105, 249, 0.2) 27.11%,
+			rgba(32, 118, 198, 0.2) 99.07%
+		);
+		filter: blur(90.5px);
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		left: -50%;
+		bottom: 10%;
+		z-index: -1;
+
+		width: clamp(223px, calc(223px + 427 * ((100vw - 320px) / 1600)), 650px);
+		height: clamp(264px, calc(264px + 506 * ((100vw - 320px) / 1600)), 770px);
+
+		background: linear-gradient(
+			126.91deg,
+			rgba(54, 105, 249, 0.2) 27.11%,
+			rgba(32, 118, 198, 0.2) 99.07%
+		);
+		filter: blur(90.5px);
+	}
+}

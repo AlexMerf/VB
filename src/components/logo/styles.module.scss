@@ -1,0 +1,14 @@
+@import '@/styles/mixin.scss';
+
+.logo {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+
+	font-family: 'Unbounded';
+	font-weight: 700;
+	font-size: clamp(20px, calc(20px + 5 * ((100vw - 320px) / 1600)), 25px);
+	line-height: 163.69%;
+	text-transform: uppercase;
+	color: var(--color-blue);
+}
