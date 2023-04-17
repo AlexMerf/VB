@@ -22,8 +22,8 @@ export const BrifForm = () => {
 		mode: 'onChange'
 	})
 
-	const TOKEN = '6053914667:AAGnA2FRspjvU3hj1ZQZv4otKbgDsYlieaQ'
-	const CHAT_ID = '-1001848685789'
+	const TOKEN = process.env.TELEGRAM_TOKEN
+	const CHAT_ID = process.env.TELEGRAM_CHAT_ID
 	const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`
 
 	const onSubmit: SubmitHandler<IShippingFields> = data => {
