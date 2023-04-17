@@ -7,26 +7,12 @@ import styles from './styles.module.scss'
 
 const projects = [
 	{
-		id: 0,
-		name: 'Intechaus',
-		description: 'Многостраничный сайт для продажи фахверковых домов и бань',
-		bg_image: '/image/projects/1.jpg',
-		image_project: '/image/projects/1.1.jpg',
-		path: 'project-1',
-		tegs: [
-			{ id: 0.0, label: 'тексты' },
-			{ id: 1.0, label: 'дизайн' },
-			{ id: 2.0, label: 'верстка' },
-			{ id: 3.0, label: 'html, css, js' }
-		]
-	},
-	{
 		id: 1,
 		name: 'Awerhome',
 		description: 'Многостраничный сайт для продажи кухни',
 		bg_image: '/image/projects/2.jpg',
-		image_project: '/image/projects/2.1.jpg',
-		path: '',
+		image_project: '/image/projects/2.1.png',
+		path: 'project-2',
 		tegs: [
 			{ id: 0.1, label: 'тексты' },
 			{ id: 1.1, label: 'дизайн' },
@@ -36,12 +22,26 @@ const projects = [
 		]
 	},
 	{
+		id: 0,
+		name: 'Intechaus',
+		description: 'Многостраничный сайт для продажи фахверковых домов и бань',
+		bg_image: '/image/projects/1.jpg',
+		image_project: '/image/projects/1.1.png',
+		path: 'project-1',
+		tegs: [
+			{ id: 0.0, label: 'тексты' },
+			{ id: 1.0, label: 'дизайн' },
+			{ id: 2.0, label: 'верстка' },
+			{ id: 3.0, label: 'html, css, js' }
+		]
+	},
+	{
 		id: 2,
 		name: 'Korea Like',
 		description: 'Интернет-магазин корейской косметики',
 		bg_image: '/image/projects/3.jpeg',
-		image_project: '/image/projects/3.1.jpg',
-		path: '',
+		image_project: '/image/projects/3.1.png',
+		path: 'https://www.behance.net/gallery/149731759/Korea-Like-sosmetic-online-store',
 		tegs: [
 			{ id: 0.2, label: 'тексты' },
 			{ id: 1.2, label: 'структура' },
@@ -54,8 +54,8 @@ const projects = [
 		name: 'Heldi',
 		description: 'Лэндинг для студии дизайна интерьера',
 		bg_image: '/image/projects/4.jpeg',
-		image_project: '/image/projects/4.1.jpg',
-		path: '',
+		image_project: '/image/projects/4.1.png',
+		path: 'https://www.behance.net/gallery/149227929/Interior-Design',
 		tegs: [
 			{ id: 0.3, label: 'тексты' },
 			{ id: 1.3, label: 'структура' },

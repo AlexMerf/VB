@@ -8,6 +8,7 @@
 	--color-textLight: #fdfdfd;
 	--color-bgDark: #333644;
 	--color-bgLight: #fdfdfd;
+	--color-gray: #767899;
 	--font-mulish: 'Mulish', sans-serif;
 	--font-unbounded: 'Unbounded', cursive;
 }
@@ -111,4 +112,3 @@ ol {
 
 	transform: translateY(calc(((var(--value) * var(--variant)) - 942px) * 0.4));
 }
-

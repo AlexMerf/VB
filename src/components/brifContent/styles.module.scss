@@ -1,0 +1,31 @@
+.content {
+	display: flex;
+	flex-direction: column;
+	gap: clamp(30px, calc(30px + 32 * ((100vw - 320px) / 1600)), 62px);
+}
+
+.titleWrapper {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.title {
+	max-width: 548px;
+
+	font-family: var(--font-unbounded);
+	font-size: clamp(20px, calc(20px + 20 * ((100vw - 320px) / 1600)), 40px);
+	line-height: 147.19%;
+	color: var(--color-textDark);
+}
+
+.description {
+	max-width: 453px;
+
+	font-weight: 500;
+	font-size: clamp(12px, calc(12px + 4 * ((100vw - 320px) / 1600)), 16px);
+	line-height: 159.02%;
+	color: var(--color-textDark);
+}

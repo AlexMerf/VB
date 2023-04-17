@@ -68,3 +68,16 @@ export interface IStager {
 	img_url_3?: string
 	img_url_4?: string
 }
+
+export interface IShippingFields {
+	name: string
+	phone: number
+	nickname: string
+	site: string
+	msgCompany: string
+	link: string
+	purpose: string
+	pages: string
+	price: string
+	msg: string
+}

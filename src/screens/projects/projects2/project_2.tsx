@@ -8,11 +8,11 @@ import { HeroimageProject } from '@/components/heroimageProject/heroimageProject
 import { OldSite } from '@/components/oldSite/oldSite'
 import { StageOfCreation } from '@/components/stagesOfCreation/stage/stageOfCreation'
 
-import data from '../../../data/project_1.json'
+import data from '../../../data/project_2.json'
 
 import styles from './styles.module.scss'
 
-export const Project_1 = () => {
+export const Project_2 = () => {
 	return (
 		<>
 			<Head>
@@ -23,7 +23,7 @@ export const Project_1 = () => {
 			</Head>
 			<Layout>
 				<HeroimageProject data={data} />
-				<OldSite data={data} widthImg={695} heightImg={405} />
+				<OldSite data={data} widthImg={1420} heightImg={570} />
 				<section className={styles.stages}>
 					<div className="container">
 						<div className={styles.content}>
@@ -71,18 +71,8 @@ export const Project_1 = () => {
 											<Image
 												src={data.stager_three.img_url_1 || ''}
 												alt={data.stager_three.title}
-												width={695}
-												height={384}
-												quality={100}
-												className={styles.image1}
-											/>
-										</div>
-										<div className={styles.wrapperImage2}>
-											<Image
-												src={data.stager_three.img_url_2 || ''}
-												alt={data.stager_three.title}
-												width={695}
-												height={384}
+												width={1420}
+												height={787}
 												quality={100}
 												className={styles.image1}
 											/>
@@ -99,8 +89,8 @@ export const Project_1 = () => {
 											<Image
 												src={data.stager_four.img_url_1 || ''}
 												alt={data.stager_four.title}
-												width={695}
-												height={883}
+												width={694}
+												height={895}
 												quality={100}
 												className={styles.image1}
 											/>
@@ -110,7 +100,7 @@ export const Project_1 = () => {
 												src={data.stager_four.img_url_2 || ''}
 												alt={data.stager_four.title}
 												width={333}
-												height={771}
+												height={785}
 												quality={100}
 												className={styles.image1}
 											/>
@@ -120,7 +110,7 @@ export const Project_1 = () => {
 												src={data.stager_four.img_url_3 || ''}
 												alt={data.stager_four.title}
 												width={332}
-												height={535}
+												height={721}
 												quality={100}
 												className={styles.image1}
 											/>
@@ -183,6 +173,99 @@ export const Project_1 = () => {
 												className={styles.image1}
 											/>
 										</div>
+									</div>
+								</StageOfCreation>
+								<StageOfCreation
+									title={data.stager_six.title}
+									subTitle="6 этап"
+									titleDescription={data.stager_six.description}
+								>
+									<div className={styles.wrapperImages6}>
+										<div className={styles.wrapperItem}>
+											<div className={styles.wrapperImage2}>
+												<Image
+													src={data.stager_six.img_url_1 || ''}
+													alt={data.stager_six.title}
+													width={695}
+													height={343}
+													quality={100}
+													className={styles.image1}
+												/>
+											</div>
+											<p className={styles.wrapperImages6Description}>
+												{data.stager_six.description_1}
+											</p>
+										</div>
+										<div className={styles.wrapperItem}>
+											<div className={styles.wrapperImage2}>
+												<Image
+													src={data.stager_six.img_url_2 || ''}
+													alt={data.stager_six.title}
+													width={695}
+													height={343}
+													quality={100}
+													className={styles.image1}
+												/>
+											</div>
+											<p className={styles.wrapperImages6Description}>
+												{data.stager_six.description_2}
+											</p>
+										</div>
+										<div className={styles.wrapperItem}>
+											<div className={styles.wrapperImage2}>
+												<Image
+													src={data.stager_six.img_url_3 || ''}
+													alt={data.stager_six.title}
+													width={695}
+													height={343}
+													quality={100}
+													className={styles.image1}
+												/>
+											</div>
+											<p className={styles.wrapperImages6Description}>
+												{data.stager_six.description_3}
+											</p>
+										</div>
+										<div className={styles.wrapperItem}>
+											<div className={styles.wrapperImage2}>
+												<Image
+													src={data.stager_six.img_url_4 || ''}
+													alt={data.stager_six.title}
+													width={695}
+													height={343}
+													quality={100}
+													className={styles.image1}
+												/>
+											</div>
+											<div>
+												<p className={styles.wrapperImages6Description}>
+													{data.stager_six.description_4}
+												</p>
+												<ul>
+													{data.stager_six.sub_description_4.map(
+														(item, index) => (
+															<li key={index}>{item}</li>
+														)
+													)}
+												</ul>
+											</div>
+										</div>
+									</div>
+								</StageOfCreation>
+								<StageOfCreation
+									title={data.stager_seven.title}
+									subTitle="7 этап"
+									titleDescription={data.stager_seven.description}
+									flexColumnTitle={true}
+									felxDirection={true}
+								>
+									<div className={styles.wrapperImages7}>
+										<a
+											href={data.stager_seven.path_site}
+											className={styles.btn}
+										>
+											перейти на сайт
+										</a>
 									</div>
 								</StageOfCreation>
 							</div>

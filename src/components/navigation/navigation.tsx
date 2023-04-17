@@ -12,8 +12,8 @@ const listNav: INav[] = [
 	{ id: 1, label: 'услуги', path: '/#cooperation' },
 	{ id: 2, label: 'кейсы', path: '/#portfolio' },
 	{ id: 3, label: 'этапы', path: '/stages-page' },
-	{ id: 4, label: 'бриф', path: '/' },
-	{ id: 5, label: 'контакты', path: '/' }
+	{ id: 4, label: 'бриф', path: '/brif' },
+	{ id: 5, label: 'контакты', path: '/#contacts' }
 ]
 
 export const Navigation = () => {

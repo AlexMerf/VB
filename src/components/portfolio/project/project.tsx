@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 import { IProject } from '@/types/types'
@@ -34,9 +35,9 @@ export const Project = ({ project }: { project: IProject }) => {
 						className={styles.imageProject}
 					/>
 				</motion.div>
-				<a className={styles.btn} href={project.path}>
+				<Link className={styles.btn} href={project.path}>
 					смотреть проект
-				</a>
+				</Link>
 			</motion.div>
 			<div className={styles.tegs}>
 				{project.tegs.map((teg: any) => (

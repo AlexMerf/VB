@@ -53,6 +53,7 @@ export const Header = () => {
 					<motion.div className={styles.social}>
 						<a href={dataInfo.instagram}>inst</a>
 						<a href={`https://wa.me/${dataInfo.whatsapp}`}>wtsp</a>
+						<a href={`https://telegram.me/${dataInfo.telegram}`}>tg</a>
 					</motion.div>
 					{matches && <Menu />}
 				</div>

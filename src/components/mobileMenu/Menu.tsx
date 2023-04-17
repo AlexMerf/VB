@@ -8,6 +8,7 @@ import React, { useState } from 'react'
 
 import { INav } from '@/types/types'
 
+import data from '../../data/info.json'
 import { LightTooltip } from 'ui/tooltip/CustomTooltip'
 
 import styles from './styles.module.scss'
@@ -16,7 +17,7 @@ const listNav: INav[] = [
 	{ id: 1, label: 'услуги', path: '/#cooperation' },
 	{ id: 2, label: 'кейсы', path: '/#portfolio' },
 	{ id: 3, label: 'этапы', path: '/stages-page' },
-	{ id: 4, label: 'контакты', path: '/' }
+	{ id: 4, label: 'контакты', path: '/#contacts' }
 ]
 
 export const Menu = () => {
@@ -97,17 +98,23 @@ export const Menu = () => {
 								</Link>
 							))}
 						</nav>
-						<a href="#" className={styles.btn}>
+						<Link href="/brif" className={styles.btn}>
 							заполнить бриф
-						</a>
+						</Link>
 						<div className={styles.social}>
-							<a href="#" className={styles.socialItem}>
+							<a href={data.instagram} className={styles.socialItem}>
 								inst
 							</a>
-							<a href="#" className={styles.socialItem}>
+							<a
+								href={`https://telegram.me/${data.telegram}`}
+								className={styles.socialItem}
+							>
 								tg
 							</a>
-							<a href="#" className={styles.socialItem}>
+							<a
+								href={`https://wa.me/${data.whatsapp}`}
+								className={styles.socialItem}
+							>
 								wtsp
 							</a>
 						</div>

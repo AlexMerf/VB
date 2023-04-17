@@ -11,7 +11,7 @@ import styles from './styles.module.scss'
 
 export const Footer = () => {
 	return (
-		<footer className={styles.footer}>
+		<footer className={styles.footer} id="contacts">
 			<div className="container">
 				<div className={styles.content}>
 					<div className={styles.contentTop}>
@@ -21,7 +21,7 @@ export const Footer = () => {
 								subTitle="мои услуги"
 								color="var(--color-bg)"
 							/>
-							<Link href="/" className={styles.brif}>
+							<Link href="/brif" className={styles.brif}>
 								заполнить бриф
 							</Link>
 						</div>

@@ -8,16 +8,25 @@ export const StageOfCreation = ({
 	children,
 	title,
 	subTitle,
-	titleDescription
+	titleDescription,
+	flexColumnTitle = false,
+	felxDirection = false
 }: {
 	children?: React.ReactNode
 	title: string
 	subTitle: string
 	titleDescription: string
+	flexColumnTitle?: boolean
+	felxDirection?: boolean
 }) => {
 	return (
 		<div className={styles.step}>
-			<div className={styles.wrapperTitle}>
+			<div
+				className={styles.wrapperTitle}
+				style={{
+					flexDirection: flexColumnTitle ? 'column' : 'row'
+				}}
+			>
 				<TitleSection
 					title={title}
 					color="var(--color-textDark)"

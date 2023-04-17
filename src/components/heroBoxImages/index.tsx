@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 
 import { ImageComponent } from './imageComponent/imageComponent'
@@ -82,13 +83,9 @@ export const BoxImage = () => {
 				</motion.div>
 			</div>
 
-			<motion.button
-				className={styles.btn}
-				whileHover={{ scale: 1.02 }}
-				whileTap={{ scale: 0.99 }}
-			>
+			<Link className={styles.btn} href="/brif">
 				заказать сайт
-			</motion.button>
+			</Link>
 		</div>
 	)
 }

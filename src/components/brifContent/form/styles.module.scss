@@ -1,0 +1,64 @@
+.form {
+	max-width: 937px;
+
+	display: flex;
+	flex-direction: column;
+
+	gap: clamp(20px, calc(20px + 10 * ((100vw - 320px) / 1600)), 30px);
+}
+
+.formGroup {
+	display: flex;
+	flex-direction: column;
+	gap: clamp(5px, calc(5px + 5 * ((100vw - 320px) / 1600)), 10px);
+}
+
+.formLabel {
+	font-family: var(--font-unbounded);
+	font-size: clamp(14px, calc(14px + 6 * ((100vw - 320px) / 1600)), 20px);
+	line-height: 164.52%;
+	color: var(--color-textDark);
+}
+
+.btn {
+	width: 100%;
+	min-height: 50px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	padding: clamp(16px, calc(16px + 2 * ((100vw - 320px) / 1600)), 18px);
+
+	background: var(--color-blue);
+
+	border: 1px solid var(--color-blue);
+	border-radius: 63px;
+
+	font-weight: 500;
+	font-size: clamp(12px, calc(12px + 4 * ((100vw - 320px) / 1600)), 16px);
+	line-height: 159.02%;
+	color: var(--color-textLight);
+}
+
+.politic {
+	max-width: 557px;
+
+	margin: 0 auto;
+
+	font-weight: 500;
+	font-size: clamp(12px, calc(12px + 4 * ((100vw - 320px) / 1600)), 16px);
+	line-height: 159.02%;
+	text-align: center;
+
+	span {
+		color: var(--color-gray);
+	}
+
+	a {
+		padding-left: 5px;
+
+		text-decoration-line: underline;
+		color: var(--color-textDark);
+	}
+}
