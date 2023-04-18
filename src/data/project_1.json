@@ -8,7 +8,7 @@
 		{ "id": 3, "label": "html, css, js" }
 	],
 
-	"hero_image": "/image/heroProject/1.jpg",
+	"hero_image": "/image/heroProject/1.webp",
 	"hero_image_description": "Image",
 
 	"step_one": {
@@ -35,12 +35,12 @@
 	"old_sites": [
 		{
 			"id": 0,
-			"img_url": "/image/heroProject/1.1.jpg",
+			"img_url": "/image/heroProject/1.1.webp",
 			"description": "На этом сайте был устаревший дизайн без правильной навигации, с непроработанной структурой, которая путала пользователя в его запросах. Плохо адаптирована мобильная версия сайта"
 		},
 		{
 			"id": 1,
-			"img_url": "/image/heroProject/1.2.jpg",
+			"img_url": "/image/heroProject/1.2.webp",
 			"description": "Здесь вя информация была разбросана хаотична. Не было четкой структуры и системности. Много ненужной информации. Выдавались ошибки в подключенных сторонних сервисах, таких как “Гугл карты” "
 		}
 	],
@@ -50,37 +50,37 @@
 	"stager_one": {
 		"title": "анализ сайтов конкурентов",
 		"description": "Выявила главных конкурентов на рынке, после чего занесла все плюсы и минусы сайтов в таблицу для сравнения. Определила в чем сильные и слабые стороны конкурентов, чтобы на фоне их выделить сайт заказчика.",
-		"img_url": "/image/heroProject/stages/stage_1.jpg"
+		"img_url": "/image/heroProject/stages/stage_1.webp"
 	},
 
 	"stager_two": {
 		"title": "прототипирование",
 		"description": "У заказчика не было готового прототипа и структуры сайта, поэтому я самостоятельно продумывала структуру  и создала прототип, написала продающие тексты, который затем отправила на согласование.",
-		"img_url": "/image/heroProject/stages/stage_2.jpg"
+		"img_url": "/image/heroProject/stages/stage_2.webp"
 	},
 
 	"stager_three": {
 		"title": "отрисовка первого блока",
 		"description": "На выбор заказчику я предоставила 2 дизайн-концепта главного блока, дизайн которого лег в основу всего сайта.",
-		"img_url_1": "/image/heroProject/stages/stage_3.jpg",
-		"img_url_2": "/image/heroProject/stages/stage_3.1.jpg"
+		"img_url_1": "/image/heroProject/stages/stage_3.webp",
+		"img_url_2": "/image/heroProject/stages/stage_3.1.webp"
 	},
 
 	"stager_four": {
 		"title": "дизайн главной и внутренних страниц",
 		"description": "Самый интересный этап, где создается полноценный сайт, с использованием всех предыдущих этапов.",
-		"img_url_1": "/image/heroProject/stages/stage_4.jpg",
-		"img_url_2": "/image/heroProject/stages/stage_4.1.jpg",
-		"img_url_3": "/image/heroProject/stages/stage_4.2.jpg",
-		"img_url_4": "/image/heroProject/stages/stage_4.3.jpg"
+		"img_url_1": "/image/heroProject/stages/stage_4.webp",
+		"img_url_2": "/image/heroProject/stages/stage_4.1.webp",
+		"img_url_3": "/image/heroProject/stages/stage_4.2.webp",
+		"img_url_4": "/image/heroProject/stages/stage_4.3.webp"
 	},
 
 	"stager_five": {
 		"title": "адаптив под мобильные устройства",
 		"description": "В наше время 80% пользователей посещают сайты с телефонов, поэтому я уделила большое внимание разработке мобильной версии сайта.",
-		"img_url_1": "/image/heroProject/stages/stage_5.jpg",
-		"img_url_2": "/image/heroProject/stages/stage_5.1.jpg",
-		"img_url_3": "/image/heroProject/stages/stage_5.2.jpg",
-		"img_url_4": "/image/heroProject/stages/stage_5.3.jpg"
+		"img_url_1": "/image/heroProject/stages/stage_5.webp",
+		"img_url_2": "/image/heroProject/stages/stage_5.1.webp",
+		"img_url_3": "/image/heroProject/stages/stage_5.2.webp",
+		"img_url_4": "/image/heroProject/stages/stage_5.3.webp"
 	}
 }

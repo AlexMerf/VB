@@ -10,8 +10,8 @@ const projects = [
 		id: 1,
 		name: 'Awerhome',
 		description: 'Многостраничный сайт для продажи кухни',
-		bg_image: '/image/projects/2.jpg',
-		image_project: '/image/projects/2.1.png',
+		bg_image: '/image/projects/2.webp',
+		image_project: '/image/projects/2.1.webp',
 		path: 'project-2',
 		tegs: [
 			{ id: 0.1, label: 'тексты' },
@@ -25,8 +25,8 @@ const projects = [
 		id: 0,
 		name: 'Intechaus',
 		description: 'Многостраничный сайт для продажи фахверковых домов и бань',
-		bg_image: '/image/projects/1.jpg',
-		image_project: '/image/projects/1.1.png',
+		bg_image: '/image/projects/1.webp',
+		image_project: '/image/projects/1.1.webp',
 		path: 'project-1',
 		tegs: [
 			{ id: 0.0, label: 'тексты' },
@@ -39,8 +39,8 @@ const projects = [
 		id: 2,
 		name: 'Korea Like',
 		description: 'Интернет-магазин корейской косметики',
-		bg_image: '/image/projects/3.jpeg',
-		image_project: '/image/projects/3.1.png',
+		bg_image: '/image/projects/3.webp',
+		image_project: '/image/projects/3.1.webp',
 		path: 'https://www.behance.net/gallery/149731759/Korea-Like-sosmetic-online-store',
 		tegs: [
 			{ id: 0.2, label: 'тексты' },
@@ -53,8 +53,8 @@ const projects = [
 		id: 3,
 		name: 'Heldi',
 		description: 'Лэндинг для студии дизайна интерьера',
-		bg_image: '/image/projects/4.jpeg',
-		image_project: '/image/projects/4.1.png',
+		bg_image: '/image/projects/4.webp',
+		image_project: '/image/projects/4.1.webp',
 		path: 'https://www.behance.net/gallery/149227929/Interior-Design',
 		tegs: [
 			{ id: 0.3, label: 'тексты' },

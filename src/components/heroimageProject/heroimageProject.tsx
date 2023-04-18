@@ -3,6 +3,8 @@ import React from 'react'
 
 import { IProjectSet } from '@/types/types'
 
+import { NotFoundImage } from '../notFoundImage/NotFoundImage'
+
 import styles from './styles.module.scss'
 
 export const HeroimageProject = ({ data }: { data: IProjectSet }) => {
@@ -19,12 +21,11 @@ export const HeroimageProject = ({ data }: { data: IProjectSet }) => {
 						))}
 					</div>
 					<div className={styles.wrapperImage}>
-						<Image
+						<NotFoundImage
 							width={1420}
 							height={600}
 							src={data.hero_image}
 							alt={data.hero_image_description}
-							quality={100}
 							className={styles.heroImage}
 						/>
 					</div>

@@ -3,6 +3,8 @@ import React from 'react'
 
 import { IProjectSet } from '@/types/types'
 
+import { NotFoundImage } from '../notFoundImage/NotFoundImage'
+
 import styles from './styles.module.scss'
 
 export const OldSite = ({
@@ -23,12 +25,11 @@ export const OldSite = ({
 						{data.old_sites.map(item => (
 							<div key={item.id} className={styles.item}>
 								<div className={styles.wrapperImage}>
-									<Image
+									<NotFoundImage
 										width={widthImg}
 										height={heightImg}
 										src={item.img_url}
 										alt={item.description}
-										quality={100}
 										className={styles.image}
 									/>
 								</div>

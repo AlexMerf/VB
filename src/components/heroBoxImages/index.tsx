@@ -10,33 +10,33 @@ import styles from './styles.module.scss'
 const imageList = [
 	{
 		id: 0,
-		src: '/image/hero/2.jpg',
+		src: '/image/hero/20.webp',
 		width: 365,
-		height: 800,
+		height: 998,
 		alt: 'Image',
 		variant: 'up'
 	},
 	{
 		id: 1,
-		src: '/image/hero/3.jpg',
+		src: '/image/hero/30.webp',
 		width: 359,
-		height: 800,
+		height: 998,
 		alt: 'Image',
 		variant: 'down'
 	},
 	{
 		id: 2,
-		src: '/image/hero/1.jpg',
+		src: '/image/hero/10.webp',
 		width: 331,
-		height: 800,
+		height: 998,
 		alt: 'Image',
 		variant: 'up'
 	},
 	{
 		id: 3,
-		src: '/image/hero/4.png',
+		src: '/image/hero/40.webp',
 		width: 547,
-		height: 800,
+		height: 998,
 		alt: 'Image',
 		variant: 'down'
 	}
@@ -69,7 +69,11 @@ export const BoxImage = () => {
 			<div className={styles.formImage}>
 				<motion.div className={styles.wrapperImages}>
 					{imageList.map(item => (
-						<div key={item.id} className={styles.wrapperImage}>
+						<div
+							key={item.id}
+							className={styles.wrapperImage}
+							style={{ width: `${item.width}px` }}
+						>
 							<ImageComponent
 								src={item.src}
 								width={item.width}

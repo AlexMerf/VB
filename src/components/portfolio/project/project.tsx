@@ -3,6 +3,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
+import { NotFoundImage } from '@/components/notFoundImage/NotFoundImage'
+
 import { IProject } from '@/types/types'
 
 import styles from './styles.module.scss'
@@ -16,22 +18,36 @@ export const Project = ({ project }: { project: IProject }) => {
 			</div>
 			<motion.div className={styles.content}>
 				<div className={styles.bgImageWrapper}>
-					<Image
+					<NotFoundImage
+						src={project.bg_image}
+						width={1420}
+						height={600}
+						alt="Image"
+						className={styles.bgImage}
+					/>
+					{/* <Image
 						src={project.bg_image}
 						width={1420}
 						height={600}
 						alt="Image"
 						quality={100}
 						className={styles.bgImage}
-					/>
+					/> */}
 				</div>
 				<motion.div className={styles.imageProjectWrapper}>
-					<Image
+					{/* <Image
 						src={project.image_project}
 						width={700}
 						height={400}
 						alt="Image"
 						quality={100}
+						className={styles.imageProject}
+					/> */}
+					<NotFoundImage
+						src={project.image_project}
+						width={700}
+						height={400}
+						alt="Image"
 						className={styles.imageProject}
 					/>
 				</motion.div>

@@ -39,6 +39,7 @@ export const ImageComponent = ({
 						} as React.CSSProperties
 					}
 					quality={100}
+					unoptimized={true}
 				/>
 			</motion.div>
 
@@ -58,6 +59,7 @@ export const ImageComponent = ({
 						} as React.CSSProperties
 					}
 					quality={100}
+					unoptimized={true}
 				/>
 			</motion.div>
 
@@ -77,6 +79,7 @@ export const ImageComponent = ({
 						} as React.CSSProperties
 					}
 					quality={100}
+					unoptimized={true}
 				/>
 			</motion.div>
 		</>

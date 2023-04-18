@@ -52,7 +52,7 @@ body {
 			rgba(253, 253, 253, 1) 100%,
 			rgba(253, 253, 253, 1) 100%
 		),
-		url('/image/bg.png');
+		url('/image/bg.webp');
 }
 
 a {
@@ -103,6 +103,8 @@ ol {
 }
 
 .wrapperimageAnimation {
+	flex: 1;
+
 	will-change: transform;
 }
 
@@ -110,5 +112,7 @@ ol {
 	width: 100%;
 	height: auto;
 
-	transform: translateY(calc(((var(--value) * var(--variant)) - 942px) * 0.4));
+	object-fit: contain;
+
+	transform: translateY(calc(((var(--value) * var(--variant)) - 998px) * 0.4));
 }

@@ -5,6 +5,7 @@ import Image from 'next/image'
 import React from 'react'
 
 import { HeroimageProject } from '@/components/heroimageProject/heroimageProject'
+import { NotFoundImage } from '@/components/notFoundImage/NotFoundImage'
 import { OldSite } from '@/components/oldSite/oldSite'
 import { StageOfCreation } from '@/components/stagesOfCreation/stage/stageOfCreation'
 
@@ -35,12 +36,11 @@ export const Project_2 = () => {
 									titleDescription={data.stager_one.description}
 								>
 									<div className={styles.wrapperImage1}>
-										<Image
+										<NotFoundImage
 											src={data.stager_one.img_url || ''}
 											alt={data.stager_one.title}
 											width={1419}
 											height={592}
-											quality={100}
 											className={styles.image1}
 										/>
 									</div>
@@ -51,12 +51,11 @@ export const Project_2 = () => {
 									titleDescription={data.stager_two.description}
 								>
 									<div className={styles.wrapperImage2}>
-										<Image
+										<NotFoundImage
 											src={data.stager_two.img_url || ''}
 											alt={data.stager_two.title}
 											width={1420}
 											height={600}
-											quality={100}
 											className={styles.image1}
 										/>
 									</div>
@@ -68,12 +67,11 @@ export const Project_2 = () => {
 								>
 									<div className={styles.wrapperImages3}>
 										<div className={styles.wrapperImage2}>
-											<Image
+											<NotFoundImage
 												src={data.stager_three.img_url_1 || ''}
 												alt={data.stager_three.title}
 												width={1420}
 												height={787}
-												quality={100}
 												className={styles.image1}
 											/>
 										</div>
@@ -86,42 +84,38 @@ export const Project_2 = () => {
 								>
 									<div className={styles.wrapperImages4}>
 										<div className={cn(styles.wrapperImage2, styles.a)}>
-											<Image
+											<NotFoundImage
 												src={data.stager_four.img_url_1 || ''}
 												alt={data.stager_four.title}
 												width={694}
 												height={895}
-												quality={100}
 												className={styles.image1}
 											/>
 										</div>
 										<div className={cn(styles.wrapperImage2, styles.s)}>
-											<Image
+											<NotFoundImage
 												src={data.stager_four.img_url_2 || ''}
 												alt={data.stager_four.title}
 												width={333}
 												height={785}
-												quality={100}
 												className={styles.image1}
 											/>
 										</div>
 										<div className={cn(styles.wrapperImage2, styles.d)}>
-											<Image
+											<NotFoundImage
 												src={data.stager_four.img_url_3 || ''}
 												alt={data.stager_four.title}
 												width={332}
 												height={721}
-												quality={100}
 												className={styles.image1}
 											/>
 										</div>
 										<div className={cn(styles.wrapperImage2, styles.f)}>
-											<Image
+											<NotFoundImage
 												src={data.stager_four.img_url_4 || ''}
 												alt={data.stager_four.title}
 												width={1420}
 												height={1315}
-												quality={100}
 												className={styles.image1}
 											/>
 										</div>
@@ -134,42 +128,38 @@ export const Project_2 = () => {
 								>
 									<div className={styles.wrapperImages5}>
 										<div className={styles.wrapperImage2}>
-											<Image
+											<NotFoundImage
 												src={data.stager_five.img_url_1 || ''}
 												alt={data.stager_five.title}
 												width={330}
 												height={590}
-												quality={100}
 												className={styles.image1}
 											/>
 										</div>
 										<div className={styles.wrapperImage2}>
-											<Image
+											<NotFoundImage
 												src={data.stager_five.img_url_2 || ''}
 												alt={data.stager_five.title}
 												width={332}
 												height={590}
-												quality={100}
 												className={styles.image1}
 											/>
 										</div>
 										<div className={styles.wrapperImage2}>
-											<Image
+											<NotFoundImage
 												src={data.stager_five.img_url_3 || ''}
 												alt={data.stager_five.title}
 												width={333}
 												height={590}
-												quality={100}
 												className={styles.image1}
 											/>
 										</div>
 										<div className={styles.wrapperImage2}>
-											<Image
+											<NotFoundImage
 												src={data.stager_five.img_url_4 || ''}
 												alt={data.stager_five.title}
 												width={332}
 												height={590}
-												quality={100}
 												className={styles.image1}
 											/>
 										</div>
@@ -183,12 +173,11 @@ export const Project_2 = () => {
 									<div className={styles.wrapperImages6}>
 										<div className={styles.wrapperItem}>
 											<div className={styles.wrapperImage2}>
-												<Image
+												<NotFoundImage
 													src={data.stager_six.img_url_1 || ''}
 													alt={data.stager_six.title}
 													width={695}
 													height={343}
-													quality={100}
 													className={styles.image1}
 												/>
 											</div>
@@ -198,12 +187,11 @@ export const Project_2 = () => {
 										</div>
 										<div className={styles.wrapperItem}>
 											<div className={styles.wrapperImage2}>
-												<Image
+												<NotFoundImage
 													src={data.stager_six.img_url_2 || ''}
 													alt={data.stager_six.title}
 													width={695}
 													height={343}
-													quality={100}
 													className={styles.image1}
 												/>
 											</div>
@@ -213,12 +201,11 @@ export const Project_2 = () => {
 										</div>
 										<div className={styles.wrapperItem}>
 											<div className={styles.wrapperImage2}>
-												<Image
+												<NotFoundImage
 													src={data.stager_six.img_url_3 || ''}
 													alt={data.stager_six.title}
 													width={695}
 													height={343}
-													quality={100}
 													className={styles.image1}
 												/>
 											</div>
@@ -228,12 +215,11 @@ export const Project_2 = () => {
 										</div>
 										<div className={styles.wrapperItem}>
 											<div className={styles.wrapperImage2}>
-												<Image
+												<NotFoundImage
 													src={data.stager_six.img_url_4 || ''}
 													alt={data.stager_six.title}
 													width={695}
 													height={343}
-													quality={100}
 													className={styles.image1}
 												/>
 											</div>

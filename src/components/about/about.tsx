@@ -1,9 +1,9 @@
 'use client'
 
 import cn from 'classnames'
-import Image from 'next/image'
 import React from 'react'
 
+import { NotFoundImage } from '../notFoundImage/NotFoundImage'
 import { OvalIcon } from 'ui/icons'
 
 import styles from './styles.module.scss'
@@ -63,12 +63,11 @@ export const About = () => {
 								на чистом коде любой сложности
 							</p>
 						</div>
-						<Image
-							src="/image/valeria.png"
+						<NotFoundImage
 							width={352}
 							height={352}
+							src="/image/valeria.webp"
 							alt="Image"
-							quality={100}
 							className={styles.image}
 						/>
 					</div>

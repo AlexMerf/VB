@@ -9,7 +9,7 @@
 		{ "id": 4, "label": "Modx" }
 	],
 
-	"hero_image": "/image/heroProject2/1.jpg",
+	"hero_image": "/image/heroProject2/1.webp",
 	"hero_image_description": "Image",
 
 	"step_one": {
@@ -46,49 +46,49 @@
 	"stager_one": {
 		"title": "анализ сайтов конкурентов",
 		"description": "Выявила главных конкурентов на рынке, после чего занесла все плюсы и минусы сайтов в таблицу для сравнения. Определила в чем сильные и слабые стороны конкурентов, чтобы на фоне их выделить сайт заказчика.",
-		"img_url": "/image/heroProject/stages/stage_1.jpg"
+		"img_url": "/image/heroProject/stages/stage_1.webp"
 	},
 
 	"stager_two": {
 		"title": "прототипирование",
 		"description": "Создала прототип сайта, где разместила все переписанные тексты. Показала, как будут размещаться все элементы и какая структура будет у будущего сайта.",
-		"img_url": "/image/heroProject/stages/stage_2.jpg"
+		"img_url": "/image/heroProject/stages/stage_2.webp"
 	},
 
 	"stager_three": {
 		"title": "отрисовка первых двух блоков",
 		"description": "Отрисовала концепцию первых двух блоков сайта, которые презентовала заказчику в видео-формате, объясняя каждое решение.",
-		"img_url_1": "/image/heroProject2/stages/stage_3.jpg"
+		"img_url_1": "/image/heroProject2/stages/stage_3.webp"
 	},
 
 	"stager_four": {
 		"title": "дизайн главной и внутренних страниц",
 		"description": "На этом этапе я отрисовала каждую страницу проекта, перед этим согласовывая все страницы с заказчиком.",
-		"img_url_1": "/image/heroProject2/stages/stage_4.jpg",
-		"img_url_2": "/image/heroProject2/stages/stage_4.1.jpg",
-		"img_url_3": "/image/heroProject2/stages/stage_4.2.jpg",
-		"img_url_4": "/image/heroProject2/stages/stage_4.3.jpg"
+		"img_url_1": "/image/heroProject2/stages/stage_4.webp",
+		"img_url_2": "/image/heroProject2/stages/stage_4.1.webp",
+		"img_url_3": "/image/heroProject2/stages/stage_4.2.webp",
+		"img_url_4": "/image/heroProject2/stages/stage_4.3.webp"
 	},
 
 	"stager_five": {
 		"title": "адаптив под мобильные устройства",
 		"description": "В наше время 80% пользователей посещают сайты с телефонов, поэтому я уделила большое внимание разработке мобильной версии сайта.",
-		"img_url_1": "/image/heroProject2/stages/stage_5.jpg",
-		"img_url_2": "/image/heroProject2/stages/stage_5.1.jpg",
-		"img_url_3": "/image/heroProject2/stages/stage_5.2.jpg",
-		"img_url_4": "/image/heroProject2/stages/stage_5.3.jpg"
+		"img_url_1": "/image/heroProject2/stages/stage_5.webp",
+		"img_url_2": "/image/heroProject2/stages/stage_5.1.webp",
+		"img_url_3": "/image/heroProject2/stages/stage_5.2.webp",
+		"img_url_4": "/image/heroProject2/stages/stage_5.3.webp"
 	},
 
 	"stager_six": {
 		"title": "оптимизация сайта",
 		"description": "Основным критерием в разработке сайта является его индексация в поисковиках. Если сайт хорошо оптимизирован, это может привести к улучшению его ранжирования в поисковой выдаче, что может привести к увеличению трафика, увеличению конверсий и, в конечном итоге, к росту заявок на продукт.",
-		"img_url_1": "/image/heroProject2/stages/stage_6.jpg",
+		"img_url_1": "/image/heroProject2/stages/stage_6.webp",
 		"description_1": "Старый сайт был плохо оптимизирован, плохая производительность. Единственное на чем он выигрывал это SEO-оптимизация. Но для хорошего индексирования его не всегда достаточно.",
-		"img_url_2": "/image/heroProject2/stages/stage_6.1.jpg",
+		"img_url_2": "/image/heroProject2/stages/stage_6.1.webp",
 		"description_2": "Мы максимально увеличили показатели и теперь сайт работает очень быстро и индексируется в поисковиках.",
-		"img_url_3": "/image/heroProject2/stages/stage_6.2.jpg",
+		"img_url_3": "/image/heroProject2/stages/stage_6.2.webp",
 		"description_3": "Мобильная версия была совершенно в плохом состоянии, помимо производительности, она была плохо адаптирована под мобильные устройства.",
-		"img_url_4": "/image/heroProject2/stages/stage_6.3.jpg",
+		"img_url_4": "/image/heroProject2/stages/stage_6.3.webp",
 		"description_4": "Вот какие настройки мы делали:",
 		"sub_description_4": [
 			"улучшение содержимого сайта",
