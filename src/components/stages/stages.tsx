@@ -1,7 +1,9 @@
+'use client'
+
+import { motion } from 'framer-motion'
 import Link from 'next/link'
 import React from 'react'
 
-import { TitleSection } from '../title/titleSection'
 import { ArrowUp, OvalIcon } from 'ui/icons'
 
 import { StagesList } from './stagesList/stagesList'
@@ -26,7 +28,15 @@ export const Stages = ({ stagers }: { stagers: IStages[] }) => {
 				<div className={styles.content}>
 					<div className={styles.wrapperTitle}>
 						<div className={styles.titleWrap}>
-							<span className={styles.subTitle}>этапы</span>
+							<motion.span
+								className={styles.subTitle}
+								initial={{ opacity: 0, x: -100 }}
+								whileInView={{ opacity: 1, x: 0 }}
+								viewport={{ once: false }}
+								transition={{ delay: 0.5 }}
+							>
+								этапы
+							</motion.span>
 							<h2 className={styles.title}>
 								О том, как происходит{' '}
 								<span style={{ position: 'relative', display: 'inline-block' }}>

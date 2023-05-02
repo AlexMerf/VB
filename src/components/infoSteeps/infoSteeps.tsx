@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 import { TitleSection } from '../title/titleSection'
 
@@ -45,6 +45,14 @@ const steps = [
 ]
 
 export const InfoSteeps = () => {
+	const divRef = React.useRef<HTMLDivElement>(null)
+
+	useEffect(() => {
+		if (divRef.current) {
+			divRef.current.scrollTop = divRef.current.scrollHeight
+		}
+	}, [])
+
 	return (
 		<section className={styles.infoSteeps}>
 			<div className="container">
@@ -57,7 +65,7 @@ export const InfoSteeps = () => {
 						/>
 					</div>
 
-					<div className={styles.steeps}>
+					<div className={styles.steeps} ref={divRef}>
 						{steps.map((step, index) => (
 							<div
 								key={step.id}

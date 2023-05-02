@@ -1,6 +1,7 @@
 'use client'
 
 import cn from 'classnames'
+import { motion } from 'framer-motion'
 import React from 'react'
 
 import { NotFoundImage } from '../notFoundImage/NotFoundImage'
@@ -41,7 +42,15 @@ export const About = () => {
 				<div className={styles.content}>
 					<div className={styles.topBlock}>
 						<div className={styles.aboutBlockText}>
-							<span className={styles.subTitle}>о работе со мной</span>
+							<motion.span
+								initial={{ opacity: 0, x: -100 }}
+								whileInView={{ opacity: 1, x: 0 }}
+								viewport={{ once: false }}
+								transition={{ delay: 0.5 }}
+								className={styles.subTitle}
+							>
+								о работе со мной
+							</motion.span>
 							<span className={cn(styles.aboutTextColor, styles.aboutText)}>
 								Меня зовут Валерия.
 							</span>
@@ -63,20 +72,37 @@ export const About = () => {
 								на чистом коде любой сложности
 							</p>
 						</div>
-						<NotFoundImage
-							width={352}
-							height={352}
-							src="/image/valeria.webp"
-							alt="Image"
-							className={styles.image}
-						/>
+						<motion.div
+							initial={{ opacity: 0, x: 100 }}
+							whileInView={{ opacity: 1, x: 0 }}
+							viewport={{ once: true }}
+							transition={{ delay: 0.5 }}
+							style={{
+								justifySelf: 'center'
+							}}
+						>
+							<NotFoundImage
+								width={352}
+								height={352}
+								src="/image/valeria.webp"
+								alt="Image"
+								className={styles.image}
+							/>
+						</motion.div>
 					</div>
 					<div className={styles.lowerBlock}>
-						{info.map(item => (
-							<div key={item.id} className={styles.box}>
+						{info.map((item, index) => (
+							<motion.div
+								initial={{ opacity: 0, y: 100 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								viewport={{ once: true }}
+								transition={{ delay: index * 0.5, duration: index * 0.5 }}
+								key={item.id}
+								className={styles.box}
+							>
 								<span className={styles.boxTitle}>{item.title}</span>
 								<p className={styles.boxinfo}>{item.description}</p>
-							</div>
+							</motion.div>
 						))}
 					</div>
 				</div>

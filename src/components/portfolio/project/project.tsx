@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
@@ -25,24 +24,14 @@ export const Project = ({ project }: { project: IProject }) => {
 						alt="Image"
 						className={styles.bgImage}
 					/>
-					{/* <Image
-						src={project.bg_image}
-						width={1420}
-						height={600}
-						alt="Image"
-						quality={100}
-						className={styles.bgImage}
-					/> */}
 				</div>
-				<motion.div className={styles.imageProjectWrapper}>
-					{/* <Image
-						src={project.image_project}
-						width={700}
-						height={400}
-						alt="Image"
-						quality={100}
-						className={styles.imageProject}
-					/> */}
+				<motion.div
+					className={styles.imageProjectWrapper}
+					initial={{ opacity: 0 }}
+					whileInView={{ opacity: 1 }}
+					viewport={{ once: false }}
+					transition={{ delay: 0.5 }}
+				>
 					<NotFoundImage
 						src={project.image_project}
 						width={700}

@@ -1,4 +1,4 @@
-'use client'
+import { motion } from 'framer-motion'
 
 import styles from './styles.module.scss'
 
@@ -14,15 +14,20 @@ export const TitleSection = ({
 	return (
 		<div className={styles.titleWrap}>
 			{subTitle && (
-				<span
+				<motion.span
+					initial={{ opacity: 0, x: -100 }}
+					whileInView={{ opacity: 1, x: 0 }}
+					viewport={{ once: false }}
+					transition={{ delay: 0.5 }}
 					className={styles.subTitle}
 					style={{
 						color: color
 					}}
 				>
 					{subTitle}
-				</span>
+				</motion.span>
 			)}
+
 			<h2
 				className={styles.title}
 				style={{
