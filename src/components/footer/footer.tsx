@@ -64,7 +64,12 @@ export const Footer = () => {
 						<a href="#" className={styles.politic}>
 							Политика конфиденциальности
 						</a>
-						<button className={styles.arrowUp}>
+						<button
+							className={styles.arrowUp}
+							onClick={() => {
+								window.scrollTo({ top: 0, behavior: 'smooth' })
+							}}
+						>
 							<span>наверх</span>
 							<ArrowUp sx={{ fontSize: '10px' }} />
 						</button>

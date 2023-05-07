@@ -66,12 +66,14 @@
 
 .topRight {
 	display: block;
-	max-width: 371px;
+	max-width: 350px;
 
 	font-weight: 500;
 	font-size: clamp(12px, calc(12px + 4 * ((100vw - 320px) / 1600)), 16px);
 	line-height: 159.02%;
 	color: var(--color-textLight);
+
+	padding-right: 20px;
 
 	@include adaptiv-value('margin-bottom', 48, 53, 1);
 }
@@ -159,6 +161,12 @@
 
 	.midleRight {
 		flex-direction: row;
+	}
+
+	.topRight {
+		max-width: 350px;
+
+		padding-right: 0px;
 	}
 
 	.brif {

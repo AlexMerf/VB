@@ -104,6 +104,8 @@
 	font-size: clamp(12px, calc(12px + 4 * ((100vw - 320px) / 1600)), 16px);
 	line-height: 159.02%;
 	color: var(--color-textLight);
+
+	padding-right: clamp(5px, calc(5px + 20 * ((100vw - 320px) / 1600)), 25px);
 }
 
 @media screen and (max-width: 991px) {

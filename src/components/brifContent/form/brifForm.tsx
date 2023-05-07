@@ -228,7 +228,7 @@ export const BrifForm = () => {
 				<span className={styles.formLabel}>Комментарии по проекту</span>
 				<CustomInput
 					fullWidth
-					label="Любая дополнительная важная информация: вопросы, пожелания по дизайну, сроки т т.д."
+					label="Любая дополнительная важная информация: вопросы, пожелания по дизайну, сроки и т.д."
 					multiline
 					rows={5}
 					{...register('msg')}

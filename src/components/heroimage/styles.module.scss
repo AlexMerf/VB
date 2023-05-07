@@ -8,10 +8,8 @@
 
 		position: absolute;
 		left: clamp(-200px, calc(-200px + 150 * ((100vw - 320px) / 1600)), -50px);
-		bottom: clamp(
-			-500px,
-			calc(-500px + 400 * ((100vw - 320px) / 1600)),
-			-100px
+		bottom: calc(
+			clamp(400px, calc(400px - 300 * ((100vw - 320px) / 1600)), 100px) * -1
 		);
 		z-index: -1;
 
