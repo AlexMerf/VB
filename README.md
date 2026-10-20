@@ -72,13 +72,17 @@ public/image/     изображения кейсов и сайта
 
 - `v1.0-legacy` / `legacy` — исходная версия 2023 года (Next 13, Pages Router, MUI).
   Собирается и запускается отдельно; полезна как визуальный эталон.
-- `modern` — текущая модернизация; после приёмки становится `main`.
+- `modern` — текущая модернизация; влита в `main` (2026-10-21), ветка сохранена.
 - Визуальный baseline и скрипт съёмки: `.baseline/`, `.tools/` (локально, не в git).
 
 ## Деплой
 
-Vercel, проект `vb-a6em`. Production: `vb-olive.vercel.app`.
-Деплой в прод — только после проверки preview-сборки.
+Vercel, проект `vb-a6em`. Production: `vb-olive.vercel.app` (деплой от 2026-10-21,
+Next.js 16, Node 22.x). Preview-сборки — на каждый push в ветки.
+
+Переменные `TELEGRAM_BOT_TOKEN` и `TELEGRAM_CHAT_ID` задаются в Vercel
+(Environment Variables → Preview и Production). Без них форма брифа показывает
+сообщение о недоступности, но сайт работает.
 
 ## Лицензия и данные
 

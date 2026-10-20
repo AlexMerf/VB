@@ -209,9 +209,18 @@ Unbounded, которую next/font не прелоадит; лечится то
 
 ### Phase 7 — запуск
 
-- Vercel Node 22, env vars, preview-деплой для приёмки;
-- production-деплой и переключение домена — только после явного подтверждения;
-- проверка: домен доступен, форма доставляет, старые URL живы.
+Статус: **production задеплоен (2026-10-21)**, форма ждёт токен.
+
+- Vercel Node 18.x → **22.x**;
+- ветки `modern`, `main`, `legacy` и тег `v1.0-legacy` запушены в GitHub;
+- preview: `vb-a6em-mwshykw7j-alexmerfs-projects.vercel.app` (READY);
+- production: `vb-olive.vercel.app` → deployment `dpl_4SqWzfC7khgdzV9bEsy4YpSCQQjk`,
+  коммит `f5c629d`; проверены `/`, `/brif`, `/sitemap.xml` — 200;
+- остаётся: добавить `TELEGRAM_BOT_TOKEN` / `TELEGRAM_CHAT_ID` в Vercel
+  (Preview + Production) и проверить живую заявку. До этого форма показывает
+  «Форма временно недоступна»;
+- известное ограничение: `*.vercel.app` не открывается из российских сетей —
+  нужен кастомный домен или другой хостинг (вне текущего скоупа).
 
 ## Риски
 
