@@ -29,6 +29,7 @@ export const OldSite = ({
 										height={heightImg}
 										src={item.img_url}
 										alt={item.description}
+										sizes={`(max-width: 768px) 100vw, ${widthImg}px`}
 										className={styles.image}
 									/>
 								</div>

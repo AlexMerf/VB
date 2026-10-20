@@ -25,6 +25,7 @@ export const HeroimageProject = ({ data }: { data: ProjectCase }) => {
 							height={600}
 							src={data.hero_image}
 							alt={`Обложка кейса: ${data.title}`}
+							sizes="(max-width: 768px) 100vw, 1418px"
 							className={styles.heroImage}
 						/>
 					</div>

@@ -11,13 +11,14 @@ import '@/styles/reset.scss'
 
 const mulish = Mulish({
 	subsets: ['latin', 'cyrillic'],
-	weight: ['400', '500', '600', '700'],
+	weight: ['400', '500', '600'],
 	variable: '--font-mulish',
 	display: 'swap'
 })
 
 const unbounded = Unbounded({
 	subsets: ['latin', 'cyrillic'],
+	weight: ['400', '700'],
 	variable: '--font-unbounded',
 	display: 'swap'
 })

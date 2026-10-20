@@ -45,6 +45,18 @@
 	display: flex;
 	flex-direction: column;
 	gap: clamp(50px, calc(50px + 30 * ((100vw - 320px) / 1600)), 80px);
+
+	animation: page-in 0.45s ease both;
+}
+
+@keyframes page-in {
+	from {
+		transform: translateY(15px);
+	}
+
+	to {
+		transform: translateY(0);
+	}
 }
 
 @media screen and (max-width: 768px) {

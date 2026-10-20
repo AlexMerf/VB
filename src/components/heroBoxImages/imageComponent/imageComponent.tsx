@@ -38,8 +38,8 @@ export const ImageComponent = ({
 							}`
 						} as React.CSSProperties
 					}
-					quality={100}
-					unoptimized={true}
+					quality={75}
+					sizes="(max-width: 768px) 50vw, 420px"
 				/>
 			</motion.div>
 
@@ -58,8 +58,8 @@ export const ImageComponent = ({
 							}`
 						} as React.CSSProperties
 					}
-					quality={100}
-					unoptimized={true}
+					quality={75}
+					sizes="(max-width: 768px) 50vw, 420px"
 				/>
 			</motion.div>
 
@@ -78,8 +78,8 @@ export const ImageComponent = ({
 							}`
 						} as React.CSSProperties
 					}
-					quality={100}
-					unoptimized={true}
+					quality={75}
+					sizes="(max-width: 768px) 50vw, 420px"
 				/>
 			</motion.div>
 		</>

@@ -41,7 +41,7 @@ export const NotFoundImage = ({
 			height={height}
 			alt={alt}
 			sizes={sizes}
-			quality={100}
+			quality={75}
 			className={className}
 			onError={() => setHasError(true)}
 		/>

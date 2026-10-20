@@ -23,6 +23,7 @@ export const Project = ({ project }: { project: ProjectCard }) => {
 						width={1420}
 						height={600}
 						alt={project.name}
+						sizes="(max-width: 768px) 100vw, 1418px"
 						className={styles.bgImage}
 					/>
 				</div>
@@ -38,6 +39,7 @@ export const Project = ({ project }: { project: ProjectCard }) => {
 						width={700}
 						height={400}
 						alt={`${project.name} — превью проекта`}
+						sizes="(max-width: 768px) 92vw, 700px"
 						className={styles.imageProject}
 					/>
 				</motion.div>
