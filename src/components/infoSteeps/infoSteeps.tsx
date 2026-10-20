@@ -67,7 +67,13 @@ export const InfoSteeps = () => {
 						/>
 					</div>
 
-					<div className={styles.steeps} ref={divRef}>
+					<div
+						className={styles.steeps}
+						ref={divRef}
+						role="region"
+						aria-label="Что входит в разработку сайта"
+						tabIndex={0}
+					>
 						{steps.map((step, index) => (
 							<div
 								key={step.id}

@@ -6,6 +6,8 @@ const pages = ['/', '/brif', '/stages-page', '/project-1', '/project-2', '/priva
 for (const path of pages) {
 	test(`нет нарушений доступности: ${path}`, async ({ page }) => {
 		await page.goto(path)
+		// Ждём завершения whileInView-анимаций: axe считает контраст по факту.
+		await page.waitForTimeout(1200)
 
 		const results = await new AxeBuilder({ page })
 			.withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'best-practice'])
@@ -21,6 +23,7 @@ test.describe('мобильное меню', () => {
 	test('меню открыто — нарушений нет', async ({ page }) => {
 		await page.goto('/')
 		await page.getByRole('button', { name: 'Меню' }).click()
+		await page.waitForTimeout(700)
 
 		const results = await new AxeBuilder({ page })
 			.withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'best-practice'])

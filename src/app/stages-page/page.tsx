@@ -11,7 +11,8 @@ export const metadata: Metadata = {
 	title: 'Этапы работы',
 	description:
 		'Как проходит работа над сайтом: брифинг, договор, аналитика, прототип и тексты, дизайн, вёрстка, CMS, настройка и тестирование.',
-	alternates: { canonical: '/stages-page' }
+	alternates: { canonical: '/stages-page' },
+	openGraph: { url: '/stages-page' }
 }
 
 export default function StagesPage() {

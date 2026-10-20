@@ -42,6 +42,15 @@ test.describe('SEO и метаданные', () => {
 		expect(types).toContain('WebSite')
 	})
 
+	test('og:url соответствует странице', async ({ page }) => {
+		await page.goto('/brif')
+
+		await expect(page.locator('meta[property="og:url"]')).toHaveAttribute(
+			'content',
+			/\/brif$/
+		)
+	})
+
 	test('sitemap и robots доступны', async ({ request }) => {
 		const sitemap = await request.get('/sitemap.xml')
 		expect(sitemap.status()).toBe(200)

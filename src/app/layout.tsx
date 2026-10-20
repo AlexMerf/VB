@@ -40,8 +40,7 @@ export const metadata: Metadata = {
 	openGraph: {
 		type: 'website',
 		locale: 'ru_RU',
-		siteName: 'VB',
-		url: '/'
+		siteName: 'VB'
 	},
 	twitter: {
 		card: 'summary_large_image'

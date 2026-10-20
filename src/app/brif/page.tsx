@@ -7,7 +7,8 @@ export const metadata: Metadata = {
 	title: 'Бриф на разработку сайта',
 	description:
 		'Заполните бриф, чтобы я оценила сложность и объём проекта и рассчитала предварительную стоимость сайта.',
-	alternates: { canonical: '/brif' }
+	alternates: { canonical: '/brif' },
+	openGraph: { url: '/brif' }
 }
 
 export default function BrifPage() {

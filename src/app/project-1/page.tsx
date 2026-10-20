@@ -14,7 +14,8 @@ export const metadata: Metadata = {
 	title: data.title,
 	description:
 		'Кейс Intechaus: объединение двух сайтов в один — анализ конкурентов, прототип, дизайн, адаптив и вёрстка.',
-	alternates: { canonical: '/project-1' }
+	alternates: { canonical: '/project-1' },
+	openGraph: { url: '/project-1' }
 }
 
 export default function Project1Page() {

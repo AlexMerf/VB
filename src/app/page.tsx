@@ -15,7 +15,8 @@ export const metadata: Metadata = {
 	title: `${siteInfo.name} — сайты под ключ`,
 	description:
 		'Помогаю бизнесам создавать запоминающиеся сайты, которые выделяют на рынке. Анализ, прототип, дизайн, адаптив, вёрстка и SEO.',
-	alternates: { canonical: '/' }
+	alternates: { canonical: '/' },
+	openGraph: { url: '/' }
 }
 
 export default function HomePage() {

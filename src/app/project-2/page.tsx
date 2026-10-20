@@ -14,7 +14,8 @@ export const metadata: Metadata = {
 	title: data.title,
 	description:
 		'Кейс Awerhome: редизайн сайта по продаже кухонь — структура, дизайн, адаптив, SEO-оптимизация и вёрстка.',
-	alternates: { canonical: '/project-2' }
+	alternates: { canonical: '/project-2' },
+	openGraph: { url: '/project-2' }
 }
 
 export default function Project2Page() {
