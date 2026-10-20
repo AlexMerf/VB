@@ -61,9 +61,9 @@ export const Footer = () => {
 						</div>
 					</div>
 					<div className={styles.contentLower}>
-						<a href="#" className={styles.politic}>
+						<Link href="/privacy" className={styles.politic}>
 							Политика конфиденциальности
-						</a>
+						</Link>
 						<button
 							className={styles.arrowUp}
 							onClick={() => {

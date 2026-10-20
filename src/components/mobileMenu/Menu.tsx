@@ -4,12 +4,11 @@ import { AnimatePresence, motion } from 'motion/react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import type React from 'react'
-import { useEffect, useState } from 'react'
-
-import type { INav } from '@/types/types'
-import { CloseIcon, MenuIcon } from '@/ui/icons'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 import { siteInfo } from '@/data/site'
+import type { INav } from '@/types/types'
+import { CloseIcon, MenuIcon } from '@/ui/icons'
 
 import styles from './styles.module.scss'
 
@@ -23,12 +22,45 @@ const listNav: INav[] = [
 export const Menu = () => {
 	const [isOpen, setIsOpen] = useState(false)
 	const pathname = usePathname()
+	const triggerRef = useRef<HTMLButtonElement>(null)
+	const dialogRef = useRef<HTMLDivElement>(null)
+	const closeRef = useRef<HTMLButtonElement>(null)
+
+	const close = useCallback(() => {
+		setIsOpen(false)
+		triggerRef.current?.focus()
+	}, [])
 
 	useEffect(() => {
 		if (!isOpen) return
 
+		closeRef.current?.focus()
+
 		const onKeyDown = (event: KeyboardEvent) => {
-			if (event.key === 'Escape') setIsOpen(false)
+			if (event.key === 'Escape') {
+				close()
+				return
+			}
+
+			if (event.key !== 'Tab' || !dialogRef.current) return
+
+			const focusable = Array.from(
+				dialogRef.current.querySelectorAll<HTMLElement>(
+					'a[href], button:not([disabled])'
+				)
+			)
+			if (focusable.length === 0) return
+
+			const first = focusable[0]
+			const last = focusable[focusable.length - 1]
+
+			if (event.shiftKey && document.activeElement === first) {
+				event.preventDefault()
+				last.focus()
+			} else if (!event.shiftKey && document.activeElement === last) {
+				event.preventDefault()
+				first.focus()
+			}
 		}
 
 		document.addEventListener('keydown', onKeyDown)
@@ -39,23 +71,23 @@ export const Menu = () => {
 			document.removeEventListener('keydown', onKeyDown)
 			document.body.style.overflow = previousOverflow
 		}
-	}, [isOpen])
+	}, [isOpen, close])
 
 	const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
 		const href = event.currentTarget.getAttribute('href') ?? ''
 		if (!href.startsWith('/#') || pathname !== '/') {
-			setIsOpen(false)
+			close()
 			return
 		}
 
 		const target = document.getElementById(href.slice(2))
 		if (!target) {
-			setIsOpen(false)
+			close()
 			return
 		}
 
 		event.preventDefault()
-		setIsOpen(false)
+		close()
 		target.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' })
 		window.history.replaceState(null, '', href)
 	}
@@ -63,9 +95,11 @@ export const Menu = () => {
 	return (
 		<>
 			<button
+				ref={triggerRef}
 				type="button"
 				aria-label="Меню"
 				aria-expanded={isOpen}
+				aria-haspopup="dialog"
 				className={styles.menuButton}
 				onClick={() => setIsOpen(true)}
 			>
@@ -80,9 +114,10 @@ export const Menu = () => {
 						animate={{ opacity: 1 }}
 						exit={{ opacity: 0 }}
 						transition={{ duration: 0.2 }}
-						onClick={() => setIsOpen(false)}
+						onClick={close}
 					>
 						<motion.div
+							ref={dialogRef}
 							role="dialog"
 							aria-modal="true"
 							aria-label="Меню"
@@ -96,10 +131,11 @@ export const Menu = () => {
 							<div className={styles.header}>
 								<span className={styles.logo}>vb</span>
 								<button
+									ref={closeRef}
 									type="button"
 									aria-label="Закрыть меню"
 									className={styles.closeButton}
-									onClick={() => setIsOpen(false)}
+									onClick={close}
 								>
 									<CloseIcon size={38} />
 								</button>
@@ -117,20 +153,29 @@ export const Menu = () => {
 										</Link>
 									))}
 								</nav>
-								<Link href="/brif" className={styles.btn} onClick={() => setIsOpen(false)}>
+								<Link href="/brif" className={styles.btn} onClick={close}>
 									заполнить бриф
 								</Link>
 								<div className={styles.social}>
-									<a href={siteInfo.instagram} className={styles.socialItem}>
+									<a
+										href={siteInfo.instagram}
+										className={styles.socialItem}
+										aria-label="Instagram inst"
+									>
 										inst
 									</a>
 									<a
 										href={`https://telegram.me/${siteInfo.telegram}`}
 										className={styles.socialItem}
+										aria-label="Telegram tg"
 									>
 										tg
 									</a>
-									<a href={`https://wa.me/${siteInfo.whatsapp}`} className={styles.socialItem}>
+									<a
+										href={`https://wa.me/${siteInfo.whatsapp}`}
+										className={styles.socialItem}
+										aria-label="WhatsApp wtsp"
+									>
 										wtsp
 									</a>
 								</div>

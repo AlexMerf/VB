@@ -85,7 +85,7 @@ export const About = () => {
 								width={352}
 								height={352}
 								src="/image/valeria.webp"
-								alt="Image"
+								alt="Валерия Белобородова"
 								className={styles.image}
 							/>
 						</motion.div>

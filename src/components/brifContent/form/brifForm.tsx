@@ -121,7 +121,13 @@ export const BrifForm = () => {
 
 			<div className={styles.formGroup}>
 				<span className={styles.formLabel}>Комфортный бюджет</span>
-				<Field label="" name="price" maxLength={100} error={fieldErrors.price} />
+				<Field
+					label=""
+					name="price"
+					aria-label="Комфортный бюджет"
+					maxLength={100}
+					error={fieldErrors.price}
+				/>
 			</div>
 
 			<div className={styles.formGroup}>

@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function StagesPage() {
 	return (
 		<PageTransition>
+			<h1 className="sr-only">Этапы работы над сайтом</h1>
 			<div className={styles.wrapperPageStagers}>
 				<Stages stagers={stages} />
 			</div>

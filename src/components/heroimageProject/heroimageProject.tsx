@@ -24,19 +24,19 @@ export const HeroimageProject = ({ data }: { data: ProjectCase }) => {
 							width={1420}
 							height={600}
 							src={data.hero_image}
-							alt={data.hero_image_description}
+							alt={`Обложка кейса: ${data.title}`}
 							className={styles.heroImage}
 						/>
 					</div>
 					<div className={styles.steps}>
 						<div className={styles.step_one}>
-							<h3 className={styles.step__title}>{data.step_one.title_step}</h3>
+							<h2 className={styles.step__title}>{data.step_one.title_step}</h2>
 							<p className={styles.step__description}>
 								{data.step_one.description_step}
 							</p>
 						</div>
 						<div className={styles.step_two}>
-							<h3 className={styles.step__title}>{data.step_two.title_step}</h3>
+							<h2 className={styles.step__title}>{data.step_two.title_step}</h2>
 							<p className={styles.step__description}>
 								{data.step_two.description_step}
 							</p>

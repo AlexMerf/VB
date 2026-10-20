@@ -8,8 +8,13 @@ import styles from './styles.module.scss'
 export const Shell = ({ children }: { children: ReactNode }) => {
 	return (
 		<div className={styles.layout}>
+			<a href="#main" className={styles.skipLink}>
+				Перейти к содержанию
+			</a>
 			<Header />
-			<main className={styles.main}>{children}</main>
+			<main id="main" tabIndex={-1} className={styles.main}>
+				{children}
+			</main>
 			<Footer />
 		</div>
 	)

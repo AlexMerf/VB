@@ -40,9 +40,15 @@ export const Header = () => {
 					<Logo />
 					<Navigation />
 					<div className={styles.social}>
-						<a href={siteInfo.instagram}>inst</a>
-						<a href={`https://wa.me/${siteInfo.whatsapp}`}>wtsp</a>
-						<a href={`https://telegram.me/${siteInfo.telegram}`}>tg</a>
+						<a href={siteInfo.instagram} aria-label="Instagram inst">
+							inst
+						</a>
+						<a href={`https://wa.me/${siteInfo.whatsapp}`} aria-label="WhatsApp wtsp">
+							wtsp
+						</a>
+						<a href={`https://telegram.me/${siteInfo.telegram}`} aria-label="Telegram tg">
+							tg
+						</a>
 					</div>
 					{isMobile && <Menu />}
 				</div>

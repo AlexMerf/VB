@@ -7,6 +7,28 @@
 	flex-direction: column;
 }
 
+.skipLink {
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	z-index: 200;
+
+	padding: 12px 20px;
+
+	font-weight: 500;
+	color: var(--color-textLight);
+
+	background-color: var(--color-blue);
+	border-radius: 12px;
+
+	transform: translateY(-200%);
+	transition: transform 0.15s ease;
+
+	&:focus-visible {
+		transform: translateY(0);
+	}
+}
+
 .main {
 	flex: 1;
 	display: flex;

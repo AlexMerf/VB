@@ -78,7 +78,7 @@ export const BoxImage = () => {
 								src={item.src}
 								width={item.width}
 								height={item.height}
-								alt={item.alt}
+								alt="Работа из портфолио"
 								lastScrollY={lastScrollY}
 								variant={item.variant}
 							/>
