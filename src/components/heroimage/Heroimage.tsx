@@ -1,9 +1,7 @@
-'use client'
-
 import React from 'react'
 
 import { BoxImage } from '../heroBoxImages'
-import { OvalIcon } from 'ui/icons'
+import { OvalIcon } from '@/ui/icons'
 
 import styles from './styles.module.scss'
 
@@ -16,7 +14,7 @@ export const Heroimage = () => {
 						Помогаю бизнесам создавать запоминающиеся сайты, которые
 						<span>
 							<OvalIcon
-								sx={{ fontSize: '8.5em' }}
+								size="8.5em"
 								className={styles.ovalIcon}
 							/>
 							выделят вас

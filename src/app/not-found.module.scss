@@ -1,0 +1,50 @@
+.notFound {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: clamp(15px, calc(15px + 15 * ((100vw - 320px) / 1600)), 30px);
+
+	padding: clamp(40px, calc(40px + 60 * ((100vw - 320px) / 1600)), 100px) 8px;
+
+	text-align: center;
+}
+
+.code {
+	font-family: var(--font-unbounded);
+	font-size: clamp(80px, calc(80px + 120 * ((100vw - 320px) / 1600)), 200px);
+	line-height: 1;
+	color: var(--color-blue);
+}
+
+.title {
+	font-family: var(--font-unbounded);
+	font-size: clamp(22px, calc(22px + 18 * ((100vw - 320px) / 1600)), 40px);
+	line-height: 140%;
+	color: var(--color-textDark);
+}
+
+.text {
+	max-width: 480px;
+
+	font-weight: 500;
+	font-size: clamp(14px, calc(14px + 4 * ((100vw - 320px) / 1600)), 18px);
+	line-height: 165%;
+	color: var(--color-gray);
+}
+
+.link {
+	padding: 16px 40px;
+
+	border: 1px solid var(--color-blue);
+	border-radius: 63px;
+
+	font-weight: 500;
+	color: var(--color-blue);
+
+	transition: background-color 0.2s ease, color 0.2s ease;
+
+	&:hover {
+		background-color: var(--color-blue);
+		color: var(--color-textLight);
+	}
+}

@@ -5,7 +5,7 @@ import Link from 'next/link'
 import dataInfo from '@/data/info.json'
 
 import { TitleSection } from '../title/titleSection'
-import { ArrowUp } from 'ui/icons'
+import { ArrowUp } from '@/ui/icons'
 
 import styles from './styles.module.scss'
 
@@ -71,7 +71,7 @@ export const Footer = () => {
 							}}
 						>
 							<span>наверх</span>
-							<ArrowUp sx={{ fontSize: '10px' }} />
+							<ArrowUp style={{ color: 'var(--color-textLight)' }} />
 						</button>
 					</div>
 				</div>

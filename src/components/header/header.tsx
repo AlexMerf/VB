@@ -1,10 +1,10 @@
 'use client'
 
-import { useMediaQuery } from '@mui/material'
-import { motion } from 'framer-motion'
-import { useEffect, useState } from 'react'
+import { motion } from 'motion/react'
+import { useEffect, useRef, useState } from 'react'
 
 import dataInfo from '@/data/info.json'
+import { useMediaQuery } from '@/hooks/useMediaQuery'
 
 import { Logo } from '../logo/logo'
 import { Menu } from '../mobileMenu/Menu'
@@ -14,31 +14,20 @@ import styles from './styles.module.scss'
 
 export const Header = () => {
 	const [show, setShow] = useState(true)
-	const [lastScrollY, setLastScrollY] = useState(0)
-
-	const matches = useMediaQuery('(max-width: 768px)')
-
-	const controlNavbar = () => {
-		if (typeof window !== 'undefined') {
-			if (window.scrollY > lastScrollY) {
-				setShow(false)
-			} else {
-				setShow(true)
-			}
-
-			setLastScrollY(window.scrollY)
-		}
-	}
+	const lastScrollY = useRef(0)
+	const isMobile = useMediaQuery('(max-width: 768px)')
 
 	useEffect(() => {
-		if (typeof window !== 'undefined') {
-			window.addEventListener('scroll', controlNavbar)
-
-			return () => {
-				window.removeEventListener('scroll', controlNavbar)
-			}
+		const onScroll = () => {
+			const current = window.scrollY
+			setShow(current <= lastScrollY.current)
+			lastScrollY.current = current
 		}
-	}, [lastScrollY])
+
+		window.addEventListener('scroll', onScroll, { passive: true })
+
+		return () => window.removeEventListener('scroll', onScroll)
+	}, [])
 
 	return (
 		<motion.header
@@ -46,18 +35,18 @@ export const Header = () => {
 			initial={{ y: -200 }}
 			animate={{ y: show ? 0 : -200 }}
 		>
-			<motion.div className="container">
+			<div className="container">
 				<div className={styles.content}>
 					<Logo />
 					<Navigation />
-					<motion.div className={styles.social}>
+					<div className={styles.social}>
 						<a href={dataInfo.instagram}>inst</a>
 						<a href={`https://wa.me/${dataInfo.whatsapp}`}>wtsp</a>
 						<a href={`https://telegram.me/${dataInfo.telegram}`}>tg</a>
-					</motion.div>
-					{matches && <Menu />}
+					</div>
+					{isMobile && <Menu />}
 				</div>
-			</motion.div>
+			</div>
 		</motion.header>
 	)
 }

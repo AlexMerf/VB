@@ -15,7 +15,7 @@
 }
 
 .name {
-	font-family: 'Unbounded';
+	font-family: var(--font-unbounded);
 	font-weight: 400;
 	font-size: clamp(14px, calc(14px + 6 * ((100vw - 320px) / 1600)), 20px);
 	line-height: 164.52%;

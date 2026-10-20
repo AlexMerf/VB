@@ -1,10 +1,10 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import Link from 'next/link'
 import React from 'react'
 
-import { ArrowUp, OvalIcon } from 'ui/icons'
+import { ArrowUp, OvalIcon } from '@/ui/icons'
 
 import { StagesList } from './stagesList/stagesList'
 import styles from './styles.module.scss'
@@ -41,7 +41,7 @@ export const Stages = ({ stagers }: { stagers: IStages[] }) => {
 								О том, как происходит{' '}
 								<span style={{ position: 'relative', display: 'inline-block' }}>
 									<OvalIcon
-										sx={{ fontSize: '11.6em' }}
+										size="11.6em"
 										className={styles.ovalIcon}
 									/>
 									развитие проекта
@@ -59,14 +59,7 @@ export const Stages = ({ stagers }: { stagers: IStages[] }) => {
 					<div className={styles.wrapperLink}>
 						<Link href="stages-page" className={styles.link}>
 							<span>все этапы</span>
-							<ArrowUp
-								sx={{
-									fontSize: '10px',
-									'& path': {
-										stroke: '#333644'
-									}
-								}}
-							/>
+							<ArrowUp style={{ color: 'var(--color-textDark)' }} />
 						</Link>
 					</div>
 				</div>

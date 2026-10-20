@@ -1,11 +1,11 @@
 'use client'
 
 import cn from 'classnames'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import React from 'react'
 
 import { NotFoundImage } from '../notFoundImage/NotFoundImage'
-import { OvalIcon } from 'ui/icons'
+import { OvalIcon } from '@/ui/icons'
 
 import styles from './styles.module.scss'
 
@@ -63,7 +63,7 @@ export const About = () => {
 										style={{ position: 'relative', display: 'inline-block' }}
 									>
 										<OvalIcon
-											sx={{ fontSize: '6.6em' }}
+											size="6.6em"
 											className={styles.ovalIcon}
 										/>
 										под ключ

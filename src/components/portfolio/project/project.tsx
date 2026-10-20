@@ -1,10 +1,12 @@
-import { motion } from 'framer-motion'
+'use client'
+
+import { motion } from 'motion/react'
 import Link from 'next/link'
 import React from 'react'
 
 import { NotFoundImage } from '@/components/notFoundImage/NotFoundImage'
 
-import { IProject } from '@/types/types'
+import { IProject, ITeg } from '@/types/types'
 
 import styles from './styles.module.scss'
 
@@ -45,7 +47,7 @@ export const Project = ({ project }: { project: IProject }) => {
 				</Link>
 			</motion.div>
 			<div className={styles.tegs}>
-				{project.tegs.map((teg: any) => (
+				{project.tegs.map((teg: ITeg) => (
 					<span key={teg.id} className={styles.teg}>
 						{teg.label}
 					</span>

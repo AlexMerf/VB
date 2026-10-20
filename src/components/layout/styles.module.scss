@@ -1,0 +1,32 @@
+@use '@/styles/mixin' as *;
+
+.layout {
+	min-height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.main {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: clamp(50px, calc(50px + 30 * ((100vw - 320px) / 1600)), 80px);
+
+	@include adaptiv-value('padding-top', 175, 90, 1);
+	@include adaptiv-value('padding-bottom', 160, 50, 1);
+}
+
+// Раньше секции были прямыми детьми main и получали gap. Теперь их оборачивает
+// PageTransition, поэтому тот же gap живёт на обёртке, чтобы геометрия не менялась.
+.page {
+	display: flex;
+	flex-direction: column;
+	gap: clamp(50px, calc(50px + 30 * ((100vw - 320px) / 1600)), 80px);
+}
+
+@media screen and (max-width: 768px) {
+	.layout {
+		overflow-x: hidden;
+	}
+}

@@ -1,0 +1,49 @@
+.legal {
+	max-width: 760px;
+	margin: 0 auto;
+	padding: 0 8px;
+
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+
+	h1 {
+		font-family: var(--font-unbounded);
+		font-size: clamp(24px, calc(24px + 16 * ((100vw - 320px) / 1600)), 40px);
+		line-height: 140%;
+		color: var(--color-textDark);
+	}
+
+	h2 {
+		margin-top: 16px;
+
+		font-family: var(--font-unbounded);
+		font-size: clamp(18px, calc(18px + 8 * ((100vw - 320px) / 1600)), 26px);
+		line-height: 150%;
+		color: var(--color-textDark);
+	}
+
+	p,
+	li {
+		font-weight: 500;
+		font-size: clamp(14px, calc(14px + 4 * ((100vw - 320px) / 1600)), 18px);
+		line-height: 165%;
+		color: var(--color-textDark);
+	}
+
+	a {
+		color: var(--color-blue);
+		text-decoration: underline;
+	}
+}
+
+.note {
+	color: var(--color-gray);
+}
+
+.back {
+	margin-top: 24px;
+
+	font-weight: 500;
+	color: var(--color-blue);
+}

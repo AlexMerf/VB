@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@500&family=Unbounded&display=swap');
-@import '@/styles/mixin.scss';
+// Шрифты подключаются через next/font в src/app/layout.tsx:
+// переменные --font-mulish и --font-unbounded задаёт className на <html>.
+@use '@/styles/mixin' as *;
 
 :root {
 	--color-blue: #3669f9;
@@ -9,8 +10,6 @@
 	--color-bgDark: #333644;
 	--color-bgLight: #fdfdfd;
 	--color-gray: #767899;
-	--font-mulish: 'Mulish', sans-serif;
-	--font-unbounded: 'Unbounded', cursive;
 }
 
 @media (prefers-color-scheme: dark) {

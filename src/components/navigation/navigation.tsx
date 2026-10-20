@@ -1,10 +1,11 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import Link from 'next/link'
-import React from 'react'
+import { usePathname } from 'next/navigation'
+import type React from 'react'
 
-import { INav } from '@/types/types'
+import type { INav } from '@/types/types'
 
 import styles from './styles.module.scss'
 
@@ -17,18 +18,20 @@ const listNav: INav[] = [
 ]
 
 export const Navigation = () => {
-	const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>) => {
-		e.preventDefault()
-		const href = e.currentTarget.getAttribute('href')
-		const fragment = href?.split('#')[1]
-		const target = document.getElementById(fragment!)
-		if (target) {
-			target.scrollIntoView({
-				behavior: 'smooth',
-				block: 'start',
-				inline: 'nearest'
-			})
-		}
+	const pathname = usePathname()
+
+	const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+		const href = event.currentTarget.getAttribute('href') ?? ''
+
+		// На других страницах навигацию и скролл к секции делает Next.js.
+		if (!href.startsWith('/#') || pathname !== '/') return
+
+		const target = document.getElementById(href.slice(2))
+		if (!target) return
+
+		event.preventDefault()
+		target.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' })
+		window.history.replaceState(null, '', href)
 	}
 
 	return (
@@ -39,17 +42,7 @@ export const Navigation = () => {
 			transition={{ delay: 1 }}
 		>
 			{listNav.map(item => (
-				<Link
-					key={item.id}
-					href={item.path}
-					onClick={() => {
-						if (item.path.indexOf('#') > -1) {
-							handleScroll
-						} else {
-							null
-						}
-					}}
-				>
+				<Link key={item.id} href={item.path} onClick={handleClick}>
 					{item.label}
 				</Link>
 			))}

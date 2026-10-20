@@ -1,11 +1,11 @@
-@import '@/styles/mixin.scss';
+@use '@/styles/mixin' as *;
 
 .logo {
 	display: flex;
 	align-items: center;
 	gap: 5px;
 
-	font-family: 'Unbounded';
+	font-family: var(--font-unbounded);
 	font-weight: 700;
 	font-size: clamp(20px, calc(20px + 5 * ((100vw - 320px) / 1600)), 25px);
 	line-height: 163.69%;

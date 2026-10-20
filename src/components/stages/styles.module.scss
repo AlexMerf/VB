@@ -1,4 +1,4 @@
-@import '@/styles/mixin.scss';
+@use '@/styles/mixin' as *;
 
 .wrapperTitle {
 	display: flex;
@@ -76,7 +76,7 @@
 	gap: 13px;
 
 	span {
-		font-family: 'Unbounded';
+		font-family: var(--font-unbounded);
 		font-weight: 400;
 		font-size: clamp(14px, calc(14px + 16 * ((100vw - 320px) / 1600)), 20px);
 		line-height: 164.52%;

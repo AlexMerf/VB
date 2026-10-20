@@ -1,15 +1,15 @@
 'use client'
 
-import { Close } from '@mui/icons-material'
-import MenuIcon from '@mui/icons-material/Menu'
-import { Box, Drawer, IconButton } from '@mui/material'
+import { AnimatePresence, motion } from 'motion/react'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import { usePathname } from 'next/navigation'
+import type React from 'react'
+import { useEffect, useState } from 'react'
 
-import { INav } from '@/types/types'
+import type { INav } from '@/types/types'
+import { CloseIcon, MenuIcon } from '@/ui/icons'
 
 import data from '../../data/info.json'
-import { LightTooltip } from 'ui/tooltip/CustomTooltip'
 
 import styles from './styles.module.scss'
 
@@ -21,106 +21,124 @@ const listNav: INav[] = [
 ]
 
 export const Menu = () => {
-	const [isOpenMenu, setIsOpenMenu] = useState(false)
+	const [isOpen, setIsOpen] = useState(false)
+	const pathname = usePathname()
 
-	const toggleDrawer =
-		(open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
-			if (
-				event.type === 'keydown' &&
-				((event as React.KeyboardEvent).key === 'Tab' ||
-					(event as React.KeyboardEvent).key === 'Shift')
-			) {
-				return
-			}
+	useEffect(() => {
+		if (!isOpen) return
 
-			setIsOpenMenu(open)
+		const onKeyDown = (event: KeyboardEvent) => {
+			if (event.key === 'Escape') setIsOpen(false)
 		}
 
-	const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>) => {
-		e.preventDefault()
-		const href = e.currentTarget.getAttribute('href')
-		const fragment = href?.split('#')[1]
-		const target = document.getElementById(fragment!)
+		document.addEventListener('keydown', onKeyDown)
+		const previousOverflow = document.body.style.overflow
+		document.body.style.overflow = 'hidden'
 
-		if (target) {
-			target.scrollIntoView({
-				behavior: 'smooth',
-				block: 'start',
-				inline: 'nearest'
-			})
+		return () => {
+			document.removeEventListener('keydown', onKeyDown)
+			document.body.style.overflow = previousOverflow
 		}
+	}, [isOpen])
+
+	const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+		const href = event.currentTarget.getAttribute('href') ?? ''
+		if (!href.startsWith('/#') || pathname !== '/') {
+			setIsOpen(false)
+			return
+		}
+
+		const target = document.getElementById(href.slice(2))
+		if (!target) {
+			setIsOpen(false)
+			return
+		}
+
+		event.preventDefault()
+		setIsOpen(false)
+		target.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' })
+		window.history.replaceState(null, '', href)
 	}
 
 	return (
 		<>
-			<LightTooltip title="Меню" arrow>
-				<IconButton aria-label="Меню" onClick={toggleDrawer(true)}>
-					<MenuIcon />
-				</IconButton>
-			</LightTooltip>
+			<button
+				type="button"
+				aria-label="Меню"
+				aria-expanded={isOpen}
+				className={styles.menuButton}
+				onClick={() => setIsOpen(true)}
+			>
+				<MenuIcon />
+			</button>
 
-			<Drawer anchor="right" open={isOpenMenu} onClose={toggleDrawer(false)}>
-				<Box
-					sx={{ width: '100vw' }}
-					role="presentation"
-					className={styles.mobileMenu}
-				>
-					<div className={styles.header}>
-						<span className={styles.logo}>vb</span>
-						<IconButton
-							aria-label="close menu"
-							sx={{ p: 0 }}
-							onKeyDown={toggleDrawer(false)}
-							onClick={toggleDrawer(false)}
+			<AnimatePresence>
+				{isOpen && (
+					<motion.div
+						className={styles.overlay}
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						exit={{ opacity: 0 }}
+						transition={{ duration: 0.2 }}
+						onClick={() => setIsOpen(false)}
+					>
+						<motion.div
+							role="dialog"
+							aria-modal="true"
+							aria-label="Меню"
+							className={styles.mobileMenu}
+							initial={{ x: '100%' }}
+							animate={{ x: 0 }}
+							exit={{ x: '100%' }}
+							transition={{ type: 'tween', duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+							onClick={event => event.stopPropagation()}
 						>
-							<Close
-								sx={{ color: 'var(--color-textLight)', fontSize: '38px' }}
-							/>
-						</IconButton>
-					</div>
-					<div className={styles.content}>
-						<nav className={styles.navigate}>
-							{listNav.map(item => (
-								<Link
-									key={item.id}
-									href={item.path}
-									className={styles.navigateItem}
-									onClick={() => {
-										if (item.path.indexOf('#') > -1) {
-											handleScroll
-											setIsOpenMenu(false)
-										} else {
-											null
-										}
-									}}
+							<div className={styles.header}>
+								<span className={styles.logo}>vb</span>
+								<button
+									type="button"
+									aria-label="Закрыть меню"
+									className={styles.closeButton}
+									onClick={() => setIsOpen(false)}
 								>
-									{item.label}
+									<CloseIcon size={38} />
+								</button>
+							</div>
+							<div className={styles.content}>
+								<nav className={styles.navigate}>
+									{listNav.map(item => (
+										<Link
+											key={item.id}
+											href={item.path}
+											className={styles.navigateItem}
+											onClick={handleClick}
+										>
+											{item.label}
+										</Link>
+									))}
+								</nav>
+								<Link href="/brif" className={styles.btn} onClick={() => setIsOpen(false)}>
+									заполнить бриф
 								</Link>
-							))}
-						</nav>
-						<Link href="/brif" className={styles.btn}>
-							заполнить бриф
-						</Link>
-						<div className={styles.social}>
-							<a href={data.instagram} className={styles.socialItem}>
-								inst
-							</a>
-							<a
-								href={`https://telegram.me/${data.telegram}`}
-								className={styles.socialItem}
-							>
-								tg
-							</a>
-							<a
-								href={`https://wa.me/${data.whatsapp}`}
-								className={styles.socialItem}
-							>
-								wtsp
-							</a>
-						</div>
-					</div>
-				</Box>
-			</Drawer>
+								<div className={styles.social}>
+									<a href={data.instagram} className={styles.socialItem}>
+										inst
+									</a>
+									<a
+										href={`https://telegram.me/${data.telegram}`}
+										className={styles.socialItem}
+									>
+										tg
+									</a>
+									<a href={`https://wa.me/${data.whatsapp}`} className={styles.socialItem}>
+										wtsp
+									</a>
+								</div>
+							</div>
+						</motion.div>
+					</motion.div>
+				)}
+			</AnimatePresence>
 		</>
 	)
 }

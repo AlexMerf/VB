@@ -1,0 +1,113 @@
+.field {
+	position: relative;
+
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+
+	width: 100%;
+}
+
+.control {
+	width: 100%;
+	min-height: 56px;
+
+	padding: 14.5px clamp(20px, calc(20px + 30 * ((100vw - 320px) / 1600)), 50px);
+
+	font-family: var(--font-mulish), sans-serif;
+	font-weight: 500;
+	font-size: clamp(12px, calc(12px + 4 * ((100vw - 320px) / 1600)), 16px);
+	line-height: 159.02%;
+	color: var(--color-textDark);
+
+	background-color: transparent;
+	border: 1px solid #c9c9c9;
+	border-radius: 63px;
+	outline: none;
+
+	transition: border-color 0.2s ease;
+
+	&::placeholder {
+		color: transparent;
+	}
+
+	&:focus {
+		border-color: var(--color-blue);
+	}
+}
+
+.textarea {
+	min-height: 160px;
+
+	padding-top: 18px;
+
+	border-radius: clamp(20px, calc(20px + 10 * ((100vw - 320px) / 1600)), 30px);
+	resize: none;
+}
+
+.label {
+	position: absolute;
+	left: clamp(20px, calc(20px + 30 * ((100vw - 320px) / 1600)), 50px);
+
+	padding: 0 4px;
+
+	font-family: var(--font-mulish), sans-serif;
+	font-weight: 500;
+	font-size: clamp(12px, calc(12px + 4 * ((100vw - 320px) / 1600)), 16px);
+	line-height: 159.02%;
+	color: var(--color-gray);
+
+	background-color: var(--color-bgLight);
+
+	pointer-events: none;
+
+	transform-origin: left center;
+	transition: top 0.15s ease, transform 0.15s ease, color 0.15s ease;
+}
+
+.inputLabel {
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.textareaLabel {
+	top: 28px;
+}
+
+.input:focus + .label,
+.input:not(:placeholder-shown) + .label,
+.textarea:focus + .label,
+.textarea:not(:placeholder-shown) + .label {
+	top: 0;
+	transform: translateY(-50%) scale(0.73);
+	color: var(--color-blue);
+}
+
+.input:not(:focus):not(:placeholder-shown) + .label,
+.textarea:not(:focus):not(:placeholder-shown) + .label {
+	color: var(--color-textDark);
+}
+
+.invalid {
+	border-color: #d32f2f;
+}
+
+.labelInvalid {
+	color: #d32f2f;
+}
+
+.helper {
+	padding-left: 20px;
+
+	font-size: 12px;
+	line-height: 1.4;
+	color: var(--color-gray);
+}
+
+.error {
+	padding-left: 20px;
+
+	font-size: 12px;
+	line-height: 1.4;
+	color: #d32f2f;
+}

@@ -1,42 +1,49 @@
-import { HideImage } from '@mui/icons-material'
-import cn from 'classnames'
+'use client'
+
 import Image from 'next/image'
 import { useState } from 'react'
 
+import { ImageOffIcon } from '@/ui/icons'
+
 import styles from './styles.module.scss'
+
+type NotFoundImageProps = {
+	className?: string
+	alt: string
+	src: string
+	width: number
+	height: number
+	sizes?: string
+}
 
 export const NotFoundImage = ({
 	className,
 	alt,
 	src,
 	width,
-	height
-}: {
-	className?: string
-	alt: string
-	src: string
-	width: number
-	height: number
-}) => {
-	const [isHideImage, setIsHideImage] = useState(false)
+	height,
+	sizes
+}: NotFoundImageProps) => {
+	const [hasError, setHasError] = useState(false)
+
+	if (!src || hasError) {
+		return (
+			<div className={styles.imageBlur} role="img" aria-label={alt}>
+				<ImageOffIcon size={100} />
+			</div>
+		)
+	}
 
 	return (
-		<>
-			{isHideImage === true ? (
-				<div className={styles.imageBlur}>
-					<HideImage sx={{ fontSize: 100 }} />
-				</div>
-			) : (
-				<Image
-					src={src}
-					width={width}
-					height={height}
-					alt={alt}
-					className={cn(className, styles.image)}
-					onError={() => setIsHideImage(true)}
-					quality={100}
-				/>
-			)}
-		</>
+		<Image
+			src={src}
+			width={width}
+			height={height}
+			alt={alt}
+			sizes={sizes}
+			quality={100}
+			className={className}
+			onError={() => setHasError(true)}
+		/>
 	)
 }

@@ -1,4 +1,6 @@
-import { motion } from 'framer-motion'
+'use client'
+
+import { motion } from 'motion/react'
 import React from 'react'
 
 import styles from './styles.module.scss'
@@ -8,15 +10,13 @@ export const StageOfCreation = ({
 	title,
 	subTitle,
 	titleDescription,
-	flexColumnTitle = false,
-	felxDirection = false
+	flexColumnTitle = false
 }: {
 	children?: React.ReactNode
 	title: string
 	subTitle: string
 	titleDescription: string
 	flexColumnTitle?: boolean
-	felxDirection?: boolean
 }) => {
 	return (
 		<div className={styles.step}>

@@ -239,9 +239,8 @@ select::-ms-expand {
 	display: none;
 }
 
+// Иконки задают размер атрибутами width/height; глобальный 100% их растягивал.
 svg {
-	width: 100%;
-	height: 100%;
 	display: block;
 }
 
