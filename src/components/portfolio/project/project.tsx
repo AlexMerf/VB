@@ -2,15 +2,14 @@
 
 import { motion } from 'motion/react'
 import Link from 'next/link'
-import React from 'react'
 
 import { NotFoundImage } from '@/components/notFoundImage/NotFoundImage'
 
-import { IProject, ITeg } from '@/types/types'
+import type { ProjectCard } from '@/data/schemas'
 
 import styles from './styles.module.scss'
 
-export const Project = ({ project }: { project: IProject }) => {
+export const Project = ({ project }: { project: ProjectCard }) => {
 	return (
 		<div className={styles.project}>
 			<div className={styles.title}>
@@ -20,10 +19,10 @@ export const Project = ({ project }: { project: IProject }) => {
 			<motion.div className={styles.content}>
 				<div className={styles.bgImageWrapper}>
 					<NotFoundImage
-						src={project.bg_image}
+						src={project.bgImage}
 						width={1420}
 						height={600}
-						alt="Image"
+						alt={project.name}
 						className={styles.bgImage}
 					/>
 				</div>
@@ -35,21 +34,32 @@ export const Project = ({ project }: { project: IProject }) => {
 					transition={{ delay: 0.5 }}
 				>
 					<NotFoundImage
-						src={project.image_project}
+						src={project.imageProject}
 						width={700}
 						height={400}
-						alt="Image"
+						alt={`${project.name} — превью проекта`}
 						className={styles.imageProject}
 					/>
 				</motion.div>
-				<Link className={styles.btn} href={project.path}>
-					смотреть проект
-				</Link>
+				{project.external ? (
+					<a
+						className={styles.btn}
+						href={project.href}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						смотреть проект
+					</a>
+				) : (
+					<Link className={styles.btn} href={project.href}>
+						смотреть проект
+					</Link>
+				)}
 			</motion.div>
 			<div className={styles.tegs}>
-				{project.tegs.map((teg: ITeg) => (
-					<span key={teg.id} className={styles.teg}>
-						{teg.label}
+				{project.tags.map(tag => (
+					<span key={tag} className={styles.teg}>
+						{tag}
 					</span>
 				))}
 			</div>

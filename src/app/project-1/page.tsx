@@ -6,7 +6,7 @@ import { NotFoundImage } from '@/components/notFoundImage/NotFoundImage'
 import { OldSite } from '@/components/oldSite/oldSite'
 import { StageOfCreation } from '@/components/stagesOfCreation/stage/stageOfCreation'
 
-import data from '@/data/project_1.json'
+import { project1Case as data } from '@/data/projects'
 
 import styles from './styles.module.scss'
 

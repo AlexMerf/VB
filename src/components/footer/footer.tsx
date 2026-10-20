@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 
-import dataInfo from '@/data/info.json'
+import { siteInfo } from '@/data/site'
 
 import { TitleSection } from '../title/titleSection'
 import { ArrowUp } from '@/ui/icons'
@@ -33,26 +33,26 @@ export const Footer = () => {
 							<ul className={styles.midleRight}>
 								<li>
 									<span>telegram</span>
-									<a href={`https://telegram.me/${dataInfo.telegram}`}>
-										@{dataInfo.telegram}
+									<a href={`https://telegram.me/${siteInfo.telegram}`}>
+										@{siteInfo.telegram}
 									</a>
 								</li>
 								<li>
 									<span>whatsapp</span>
-									<a href={`https://wa.me/${dataInfo.whatsapp}`}>
+									<a href={`https://wa.me/${siteInfo.whatsapp}`}>
 										8 (914) 364 - 05 - 59
 									</a>
 								</li>
 							</ul>
 							<div className={styles.lowerRight}>
-								<a href={dataInfo.behance} className={styles.btnSocial}>
+								<a href={siteInfo.behance} className={styles.btnSocial}>
 									behance
 								</a>
-								<a href={dataInfo.instagram} className={styles.btnSocial}>
+								<a href={siteInfo.instagram} className={styles.btnSocial}>
 									instagram
 								</a>
 								<a
-									href={`mailto:${dataInfo.email}`}
+									href={`mailto:${siteInfo.email}`}
 									className={styles.btnSocial}
 								>
 									email

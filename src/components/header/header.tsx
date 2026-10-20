@@ -3,7 +3,7 @@
 import { motion } from 'motion/react'
 import { useEffect, useRef, useState } from 'react'
 
-import dataInfo from '@/data/info.json'
+import { siteInfo } from '@/data/site'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 
 import { Logo } from '../logo/logo'
@@ -40,9 +40,9 @@ export const Header = () => {
 					<Logo />
 					<Navigation />
 					<div className={styles.social}>
-						<a href={dataInfo.instagram}>inst</a>
-						<a href={`https://wa.me/${dataInfo.whatsapp}`}>wtsp</a>
-						<a href={`https://telegram.me/${dataInfo.telegram}`}>tg</a>
+						<a href={siteInfo.instagram}>inst</a>
+						<a href={`https://wa.me/${siteInfo.whatsapp}`}>wtsp</a>
+						<a href={`https://telegram.me/${siteInfo.telegram}`}>tg</a>
 					</div>
 					{isMobile && <Menu />}
 				</div>

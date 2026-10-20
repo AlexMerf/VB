@@ -8,17 +8,18 @@ import { PageTransition } from '@/components/layout/PageTransition'
 import { Portfolio } from '@/components/portfolio/portfolio'
 import { Stages } from '@/components/stages/stages'
 
-import stagers from '@/data/stagers.json'
+import { siteInfo } from '@/data/site'
+import { stages } from '@/data/stages'
 
 export const metadata: Metadata = {
-	title: 'Сайты под ключ: дизайн, вёрстка, SEO',
+	title: `${siteInfo.name} — сайты под ключ`,
 	description:
 		'Помогаю бизнесам создавать запоминающиеся сайты, которые выделяют на рынке. Анализ, прототип, дизайн, адаптив, вёрстка и SEO.',
 	alternates: { canonical: '/' }
 }
 
 export default function HomePage() {
-	const stagersPreview = stagers.slice(0, 2)
+	const stagesPreview = stages.slice(0, 2)
 
 	return (
 		<PageTransition>
@@ -26,7 +27,7 @@ export default function HomePage() {
 			<About />
 			<InfoSteeps />
 			<Portfolio />
-			<Stages stagers={stagersPreview} />
+			<Stages stagers={stagesPreview} />
 			<Cooperation />
 		</PageTransition>
 	)

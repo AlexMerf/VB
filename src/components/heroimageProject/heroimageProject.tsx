@@ -1,12 +1,12 @@
 import React from 'react'
 
-import { IProjectSet } from '@/types/types'
+import type { ProjectCase } from '@/data/schemas'
 
 import { NotFoundImage } from '../notFoundImage/NotFoundImage'
 
 import styles from './styles.module.scss'
 
-export const HeroimageProject = ({ data }: { data: IProjectSet }) => {
+export const HeroimageProject = ({ data }: { data: ProjectCase }) => {
 	return (
 		<section className={styles.heroimageProject}>
 			<div className="container">

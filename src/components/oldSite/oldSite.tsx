@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { IProjectSet } from '@/types/types'
+import type { ProjectCase } from '@/data/schemas'
 
 import { NotFoundImage } from '../notFoundImage/NotFoundImage'
 
@@ -11,7 +11,7 @@ export const OldSite = ({
 	widthImg,
 	heightImg
 }: {
-	data: IProjectSet
+	data: ProjectCase
 	widthImg: number
 	heightImg: number
 }) => {

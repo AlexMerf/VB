@@ -6,7 +6,7 @@ import { NotFoundImage } from '@/components/notFoundImage/NotFoundImage'
 import { OldSite } from '@/components/oldSite/oldSite'
 import { StageOfCreation } from '@/components/stagesOfCreation/stage/stageOfCreation'
 
-import data from '@/data/project_2.json'
+import { project2Case as data } from '@/data/projects'
 
 import styles from './styles.module.scss'
 
@@ -225,7 +225,7 @@ export default function Project2Page() {
 													{data.stager_six.description_4}
 												</p>
 												<ul>
-													{data.stager_six.sub_description_4.map(
+													{(data.stager_six.sub_description_4 ?? []).map(
 														(item, index) => (
 															<li key={index}>{item}</li>
 														)

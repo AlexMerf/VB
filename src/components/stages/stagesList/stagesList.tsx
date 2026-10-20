@@ -1,20 +1,10 @@
 import React from 'react'
 
+import type { Stage } from '@/data/schemas'
+
 import styles from './styles.module.scss'
 
-interface IStages {
-	id: number
-	number: string
-	content: IStagesContent[]
-}
-
-interface IStagesContent {
-	id: number
-	title: string
-	description: string
-}
-
-export const StagesList = ({ data }: { data: IStages[] }) => {
+export const StagesList = ({ data }: { data: Stage[] }) => {
 	return (
 		<div className={styles.stages}>
 			{data &&

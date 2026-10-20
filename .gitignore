@@ -40,3 +40,8 @@ next-env.d.ts
 # local tooling and visual baselines (not for git)
 .tools/
 .baseline/
+
+# tests and reports
+playwright-report/
+test-results/
+.lighthouseci/

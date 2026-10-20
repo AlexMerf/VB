@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react'
 import type { INav } from '@/types/types'
 import { CloseIcon, MenuIcon } from '@/ui/icons'
 
-import data from '../../data/info.json'
+import { siteInfo } from '@/data/site'
 
 import styles from './styles.module.scss'
 
@@ -121,16 +121,16 @@ export const Menu = () => {
 									заполнить бриф
 								</Link>
 								<div className={styles.social}>
-									<a href={data.instagram} className={styles.socialItem}>
+									<a href={siteInfo.instagram} className={styles.socialItem}>
 										inst
 									</a>
 									<a
-										href={`https://telegram.me/${data.telegram}`}
+										href={`https://telegram.me/${siteInfo.telegram}`}
 										className={styles.socialItem}
 									>
 										tg
 									</a>
-									<a href={`https://wa.me/${data.whatsapp}`} className={styles.socialItem}>
+									<a href={`https://wa.me/${siteInfo.whatsapp}`} className={styles.socialItem}>
 										wtsp
 									</a>
 								</div>

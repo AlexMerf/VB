@@ -4,24 +4,14 @@ import { motion } from 'motion/react'
 import Link from 'next/link'
 import React from 'react'
 
+import type { Stage } from '@/data/schemas'
+
 import { ArrowUp, OvalIcon } from '@/ui/icons'
 
 import { StagesList } from './stagesList/stagesList'
 import styles from './styles.module.scss'
 
-interface IStages {
-	id: number
-	number: string
-	content: IStagesContent[]
-}
-
-interface IStagesContent {
-	id: number
-	title: string
-	description: string
-}
-
-export const Stages = ({ stagers }: { stagers: IStages[] }) => {
+export const Stages = ({ stagers }: { stagers: Stage[] }) => {
 	return (
 		<section className={styles.stagesWrapper}>
 			<div className="container">

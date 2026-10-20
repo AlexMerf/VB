@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import { PageTransition } from '@/components/layout/PageTransition'
 import { Stages } from '@/components/stages/stages'
 
-import stagers from '@/data/stagers.json'
+import { stages } from '@/data/stages'
 
 import styles from './styles.module.scss'
 
@@ -18,7 +18,7 @@ export default function StagesPage() {
 	return (
 		<PageTransition>
 			<div className={styles.wrapperPageStagers}>
-				<Stages stagers={stagers} />
+				<Stages stagers={stages} />
 			</div>
 		</PageTransition>
 	)

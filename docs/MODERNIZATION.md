@@ -116,30 +116,49 @@ Node: 22.x локально и на Vercel (у проекта сейчас вы�
 
 ### Phase 3 — контент
 
-- Zod-схемы для кейсов, этапов, услуг, контактов;
-- единый источник правды: карточки портфолио из данных, а не из JSX;
-- строгая типизация, никаких `any` в контенте.
+Статус: **готово (2026-10-21)**.
+
+- Zod-схемы для кейсов, этапов, услуг, контактов (`src/data/schemas.ts`);
+- единый источник правды: карточки портфолио, услуги и этапы вынесены в
+  `src/data/*.ts`, компоненты больше не держат контент в JSX;
+- `validateContent()` в корневом layout валидирует JSON на сборке;
+- типы `ProjectCase`, `ProjectCard`, `Stage`, `Service`, `SiteInfo` выводятся из
+  схем, `any` в контенте нет.
 
 ### Phase 4 — бриф
 
+Статус: **готово, кроме живой проверки доставки (2026-10-21)**.
+
 - Server Action + Telegram Bot API, токен только серверный;
-- серверная валидация Zod, honeypot, rate limit;
+- серверная валидация Zod, honeypot, rate limit (5 заявок / 10 минут на IP);
 - страница политики конфиденциальности, ссылка из формы и футера;
-- реальная проверка доставки заявки в тестовый чат.
+- ожидает: новый токен бота от владельца, затем — тестовая заявка в чат и
+  выставление env в Vercel.
 
 ### Phase 5 — SEO и метаданные
 
+Статус: **готово (2026-10-21)**.
+
 - Metadata API: уникальные title/description на каждой странице;
-- OG/Twitter, `opengraph-image` через `next/og`, JSON-LD (Person/Service);
-- `sitemap.ts`, `robots.ts`, страница 404;
-- canonical, корректный `lang="ru"`.
+- OG/Twitter, `opengraph-image` через `next/og` (1200×630), JSON-LD Person + WebSite;
+- `sitemap.ts`, `robots.ts`, `manifest.ts`, кастомная 404;
+- canonical, `lang="ru"`, viewport/themeColor;
+- OG-картинка сознательно на латинице: дефолтный шрифт `next/og` не гарантирует
+  кириллицу, а ломать глифы в соцпревью нельзя.
 
 ### Phase 6 — качество
 
-- ESLint 9 flat + Prettier + `tsc --noEmit`;
-- Playwright: визуальная регрессия + e2e брифа (мок Telegram);
-- Lighthouse CI с бюджетами (perf/a11y/best-practices/SEO);
-- GitHub Actions на PR, Dependabot, превью-деплои Vercel.
+Статус: **готово (2026-10-21)**.
+
+- ESLint 9 flat + Prettier + `tsc --noEmit` — чисто;
+- Playwright: 36 e2e-проверок (маршруты, 404, бриф, радио, мобильное меню,
+  SEO-метаданные, sitemap/robots/manifest, JSON-LD), 2 пропуска по платформам;
+- `playwright.config.ts` с webServer и двумя проектами (desktop/mobile);
+- `.github/workflows/ci.yml`: lint → typecheck → build → e2e на push/PR;
+  отдельная job Lighthouse CI с бюджетами (`lighthouserc.cjs`);
+- `.gitattributes` для нормализации LF;
+- визуальная регрессия остаётся локальным инструментом (`.tools/diff.mjs`):
+  скриншоты весят десятки мегабайт и в CI не кладутся.
 
 ### Phase 7 — запуск
 

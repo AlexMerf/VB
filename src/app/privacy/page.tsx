@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
-import dataInfo from '@/data/info.json'
+import { siteInfo } from '@/data/site'
 
 import styles from './styles.module.scss'
 
@@ -19,8 +19,8 @@ export default function PrivacyPage() {
 
 			<p>
 				Настоящая политика описывает, какие данные собирает сайт и как они
-				используются. Оператор персональных данных — {dataInfo.name},
-				контакт: <a href={`mailto:${dataInfo.email}`}>{dataInfo.email}</a>.
+				используются. Оператор персональных данных — {siteInfo.name},
+				контакт: <a href={`mailto:${siteInfo.email}`}>{siteInfo.email}</a>.
 			</p>
 
 			<h2>Какие данные собираются</h2>
@@ -49,9 +49,9 @@ export default function PrivacyPage() {
 			<p>
 				Вы можете отозвать согласие на обработку и попросить удалить свои
 				данные, написав на{' '}
-				<a href={`mailto:${dataInfo.email}`}>{dataInfo.email}</a> или в Telegram{' '}
-				<a href={`https://telegram.me/${dataInfo.telegram}`}>
-					@{dataInfo.telegram}
+				<a href={`mailto:${siteInfo.email}`}>{siteInfo.email}</a> или в Telegram{' '}
+				<a href={`https://telegram.me/${siteInfo.telegram}`}>
+					@{siteInfo.telegram}
 				</a>
 				.
 			</p>

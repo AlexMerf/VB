@@ -8,8 +8,8 @@
 - **Next.js 16** (App Router, Turbopack), **React 19**, TypeScript (strict)
 - **motion** — анимации (заменил framer-motion)
 - **SCSS-модули** + CSS-переменные; шрифты через `next/font`, картинки через `next/image`
-- **Zod** — валидация брифа на сервере
-- **ESLint 9** (flat config), Prettier, Playwright, Lighthouse CI (в планах)
+- **Zod** — схемы контента и валидация брифа
+- **ESLint 9** (flat config), Prettier, Playwright, Lighthouse CI
 - Без UI-библиотек: инпуты, радио, дровер и иконки — собственные компоненты
 
 ## Запуск
@@ -26,6 +26,7 @@ npm run build
 npm run typecheck
 npm run lint
 npm run check        # typecheck + lint
+npm run test:e2e     # Playwright: маршруты, бриф, меню, SEO
 ```
 
 Node.js ≥ 22.
@@ -62,9 +63,10 @@ public/image/     изображения кейсов и сайта
 
 ## Контент
 
-Кейсы и этапы лежат в `src/data/*.json` и импортируются в страницы. Новый кейс —
-это JSON-файл + страница в `src/app/` + карточка в портфолио. Типизация контента
-через Zod — в работе (Phase 3).
+Кейсы и этапы лежат в `src/data/*.json` и импортируются через типизированные
+модули (`projects.ts`, `stages.ts`, `services.ts`, `site.ts`). Схемы — в
+`src/data/schemas.ts`, валидация — на сборке через `validateContent()`.
+Новый кейс — JSON-файл + страница в `src/app/` + карточка в `projects.ts`.
 
 ## История и ветки
 

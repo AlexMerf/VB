@@ -1,38 +1,10 @@
 import React from 'react'
 
+import { services } from '@/data/services'
+
 import { TitleSection } from '../title/titleSection'
 
 import styles from './styles.module.scss'
-
-const list = [
-	{
-		id: 0,
-		title: 'одностраничный сайт',
-		subTitle: '(лэндинг)',
-		description:
-			'Лэндинг это — сайт с краткой информацией о товаре, услуге или мероприятии. Его задача — превращать посетителей в клиентов.',
-		price: 'от 30 000 ₽',
-		data: 'от 14 дней'
-	},
-	{
-		id: 1,
-		title: 'многостраничный сайт',
-		subTitle: '(корпоративный)',
-		description:
-			'Сайт с более сложной структурой, состоящий из нескольких страниц, для подробного знакомства с компанией/услугами.',
-		price: 'от 40 000 ₽',
-		data: 'от 21 дней'
-	},
-	{
-		id: 2,
-		title: 'дизайн-макета',
-		subTitle: '(figma)',
-		description:
-			'Одностраничный или многостраничный дизайн в фигме с адаптацией под разные разрешения. Макет будет подготовлен для дальнейшей передачи разработчикам.',
-		price: 'от 20 000 ₽',
-		data: 'от 10 дней'
-	}
-]
 
 export const Cooperation = () => {
 	return (
@@ -60,7 +32,7 @@ export const Cooperation = () => {
 						</div>
 					</div>
 					<div className={styles.lowerContent}>
-						{list.map(item => (
+						{services.map(item => (
 							<div className={styles.lowerItem} key={item.id}>
 								<div className={styles.itemTitle}>
 									<span>{item.title}</span>
